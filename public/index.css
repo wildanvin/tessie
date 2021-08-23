@@ -1,0 +1,228 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#box-container {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 50vw 50vw;
+  grid-template-rows: 50vh 50vh;
+}
+
+/*This class is for the hidden frame*/
+.hide {
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  width: 1px;
+  height: 1px;
+}
+
+#box-1 {
+  background-color: #2274a5;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#box-2 {
+  background-color: #b744b8;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#box-3 {
+  background-color: #f87666;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+#box-4 {
+  background-color: #ffb800;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Here starts the code for the modal*/
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 100vw; /* Full width */
+  height: 100vh; /* Full height */
+  /*overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #ccdad1;
+  margin: 12vh auto; /* 15vh from the top and centered */
+
+  border: 10px solid #f87666;
+  width: 75%; /* Could be more or less, depending on screen size */
+  height: 70%;
+  display: grid;
+  grid-template-areas:
+    "options close"
+    "enterText enterText"
+    "grabar grabar";
+}
+
+/* The Close Button */
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 30px;
+  font-weight: bold;
+  grid-area: close;
+  justify-self: end;
+  padding: 0px 20px 0px 0px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Until here up ^ the code is a copy of the modal of w3 schools */
+
+.options {
+  grid-area: options;
+}
+
+.enterText {
+  grid-area: enterText;
+  /*CSS grid:*/
+  justify-self: center;
+  justify-content: center;
+
+  /*Flexbox*/
+  display: flex;
+  flex-direction: column;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  position: relative;
+  bottom: 8vh;
+}
+
+#enterText1 {
+  width: 300px;
+  height: 300px;
+  background-image: url("./icons/redonda.svg");
+}
+
+#enterText2 {
+  width: 300px;
+  height: 300px;
+  background-image: url("./icons/huella.svg");
+}
+
+#enterText3 {
+  width: 450px;
+  height: 250px;
+  background-image: url("./icons/huesoS.svg");
+}
+
+#enterText4 {
+  width: 455px;
+  height: 300px;
+  background-image: url("./icons/huesoL.svg");
+}
+
+.formGrab {
+  grid-area: grabar;
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.formGen {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+}
+
+input[type="text"] {
+  width: 90%;
+  padding: 4%;
+
+  margin: auto;
+  border: none;
+  background: #ccdad1;
+
+  font-size: 30px;
+  text-align: center;
+  box-sizing: border-box;
+}
+input[type="submit"] {
+  width: 200px;
+  padding: 1vh;
+  margin: auto;
+  border: none;
+  background: #ffb800;
+
+  justify-content: center;
+  align-items: center;
+
+  font-size: 30px;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="submit"]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/*Positioning the elements in the modal so they look nicer:*/
+
+#generateButtonM1,
+#generateButtonM2,
+#generateButtonM3,
+#generateButtonM4 {
+  position: relative;
+  top: 26vh;
+}
+
+#lineM1,
+#lineM2,
+#lineM3,
+#lineM4 {
+  position: relative;
+  top: 3vh;
+}
