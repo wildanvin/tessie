@@ -2,7 +2,7 @@ node_modules
 dist
 
 #nc files
-.nc
+*.nc
 
 # local env files
 .env.local
