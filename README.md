@@ -12,16 +12,36 @@ There are some parts that you will need to buy:
 - Jumper wires
 - Raspberry Pi 3 (if you want to make it fully autonomous)
 - 7 inch LCD display (if you want to make it fully autonomous)
-- Recomended: Tungsten bits (Since you will be engraving in aluminium tungsten bits will last longer)
+- Recomended: Tungsten bits (Since you will be engraving in aluminium, tungsten bits will last longer)
 
 ## A little overvierw of how this works:
 At the hearth of tessie (and others CNC machines) is the GRBL controller. GRBL is a firmware that you can install in different boards (like Arduino) to control the motors and spindle of a CNC. It tells the motors exactly where and how fast to move. (When you buy the miniCNC in Aliexpress it already comes with a board with GRBL installed)
-For example if you want to move 15 cm in the positive x direction, 10 cm in the negative Y direction and 3 cm in the positive Z direction you have to send to the GRBL board this:
+For example if you just want to move 15 cm in the positive x direction, 10 cm in the negative Y direction you have to send to the GRBL board this:
+```
+G1 X150.00 Y-100.00 F200.0
+```
 
-That line in know as gcode. They are a set of instruction on how to move the different components if you send the line:
+That line in know as gcode. It doesn't look that intimidating right? Let's start from the beginning:
+- G1: This command tells GRBL that motion to a certain position is coming. Especifically G1 is used when you want to move while the spindle is "working".
+- X150.00 and Y-100.00: These are the coordinates where you want to move in mm.
+- F200.00: This is the feed rate in mm/s. With this command you can control how fast you go.
 
-The engraving motor will start to spin clockwiuse at 14000 RPM (revolutions per minute)
-Now that you have your gcode you need some sort of special program that can send that instruction to the GRBL board properly. I suppose there are some that you can use. There is Easel software by inventables wich is an online tool. you can send g code with it. But you can do much more that that. It is really cool. Check it out. Universal Gcode Sender (UGS) adn CNC.js are interfaces that allow you to send the Gcode to the GRBL board.
+If you want to turn on the motor you will send:
+```
+M3 S8000
+```
+That will start the spindle clockwise at 8000 RPM (revolutions per minute).
+And thats it, you can control your CNC to decimals of millimiters with these commands known as gcode.
+
+Ok, now that you have your gcode with all the instructions you need a proper way to send it to the GRBL board. I used Universal Gcode Sender to do that. It works really great, it provides a web interface and CLI that I plan to use in the future.
+
+## What tessie does:
+
+The purpose of tessie is to be a completely autonomous engraving machine. The user will approach to tessie, select the tag figure desired, inser the name and number of the pet and click "Engrave". 
+
+Easel by Inventables: This online program allows you to do much more than just sending gcode. It is a complete suite to desing your carvings in different material with different bits and configurations. You will need to sign up and download the driver, but it is pretty cool, definetely recommended.
+
+
 
 ## Overview of the code in this repo: 
 It has basically 3 main components:
