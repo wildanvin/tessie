@@ -1,4 +1,8 @@
-module.exports = function wordMaker(name, ncFileName) {
+function wordMaker(name, ncFileName) {
+  console.log(
+    `Hello from wordMaker. I am ${name} an my filename is ${ncFileName} `
+  )
+  /*
   const template = require("../templates/template1.json")
   const fs = require("fs")
   const text = name
@@ -11,7 +15,7 @@ module.exports = function wordMaker(name, ncFileName) {
 
   var spaceInX = (widthSlot1 - totalWidthOfText) / 2
 
-  /**This "double for" space the letters in x an centers them ;) */
+  //This "double for" space the letters in x an centers them ;) 
   for (let i of text) {
     for (let j = 0; j < template[i].values.length; j++) {
       let a = template[i].values[j]
@@ -27,6 +31,7 @@ module.exports = function wordMaker(name, ncFileName) {
     }
     spaceInX = spaceInX + template[i].width
   }
+  */
 }
 
-//export default wordMaker
+exports.wordMaker = wordMaker

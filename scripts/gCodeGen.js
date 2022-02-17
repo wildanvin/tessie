@@ -1,5 +1,6 @@
 function engraveSlot1(name, ncFileName) {
   const template = require("../templates/template1.json")
+  const wordMaker = require("./wordMaker")
   const fs = require("fs")
   const text = name
   const widthSlot1 = 30
@@ -17,6 +18,8 @@ M3 S8000`
   fs.appendFileSync(`./ncFiles/${ncFileName}.nc`, head, function (err) {
     if (err) throw err
   })
+
+  wordMaker.wordMaker("elDanVin", "archivoPrueba")
 
   var totalWidthOfText = 0
   for (let i of text) {
