@@ -1,8 +1,8 @@
 function wordMaker(name, ncFileName) {
   console.log(
-    `Hello from wordMaker. I am ${name} an my filename is ${ncFileName} `
+    `Hello from wordMaker. We are going to engrave ${name} and the filename is ${ncFileName} `
   )
-  /*
+
   const template = require("../templates/template1.json")
   const fs = require("fs")
   const text = name
@@ -15,7 +15,7 @@ function wordMaker(name, ncFileName) {
 
   var spaceInX = (widthSlot1 - totalWidthOfText) / 2
 
-  //This "double for" space the letters in x an centers them ;) 
+  //This "double for" space the letters in x an centers them ;)
   for (let i of text) {
     for (let j = 0; j < template[i].values.length; j++) {
       let a = template[i].values[j]
@@ -25,13 +25,12 @@ function wordMaker(name, ncFileName) {
 
       //These 3 lines append the current line to the file:
 
-      fs.appendFileSync(`../ncFiles/${ncFileName}.nc`, d, function (err) {
+      fs.appendFileSync(`./ncFiles/${ncFileName}.nc`, d, function (err) {
         if (err) throw err
       })
     }
     spaceInX = spaceInX + template[i].width
   }
-  */
 }
 
 exports.wordMaker = wordMaker
