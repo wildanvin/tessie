@@ -1,9 +1,6 @@
 function engraveSlot1(name, ncFileName) {
-  const template = require("../templates/template1.json")
   const wordMaker = require("./wordMaker")
   const fs = require("fs")
-  const text = name
-  const widthSlot1 = 30
 
   let head = `$H
 G10 P0 L20 X0 Y0 Z0
