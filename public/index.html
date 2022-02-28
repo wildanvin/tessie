@@ -55,8 +55,12 @@
       <div class="modal-content">
         <span class="close">&times;</span>
         <span class="options">
-          <!-- Opciones "These are the options to engrave in 2 lines, this will be implemented in the future" --></span
-        >
+          <label for="lines">Número de líneas:</label>
+          <select id="linesM1" name="lineList" form="lineForm">
+            <option value="1line">1 Línea</option>
+            <option value="2line">2 Líneas</option>
+          </select>
+        </span>
 
         <div class="enterText" id="enterText1">
           <form
@@ -65,7 +69,8 @@
             action="/engraveSlot1"
             target="hiddenFrame"
           >
-            <input id="lineM1" name="name" type="text" />
+            <input id="line1M1" name="name" type="text" />
+            <input id="line2M1" name="name" type="text" />
 
             <input id="generateButtonM1" type="submit" value="Generar Texto" />
           </form>
@@ -163,7 +168,7 @@
           >
             <input id="lineM4" name="name" type="text" />
 
-            <input id="generateButtonM3" type="submit" value="Generar Texto" />
+            <input id="generateButtonM4" type="submit" value="Generar Texto" />
           </form>
         </div>
 

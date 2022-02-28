@@ -1,6 +1,7 @@
 function engraveSlot1(name, ncFileName) {
   const wordMaker = require("./wordMaker")
   const fs = require("fs")
+  //const widthSlot1 = 30 this is differetnfor each slot
 
   let head = `$H
 G10 P0 L20 X0 Y0 Z0
