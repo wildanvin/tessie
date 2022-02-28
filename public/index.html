@@ -56,7 +56,7 @@
         <span class="close">&times;</span>
         <span class="options">
           <label for="lines">Número de líneas:</label>
-          <select id="linesM1" name="lineList" form="lineForm">
+          <select id="linesM1" name="lineList" form="formGenM1">
             <option value="1line">1 Línea</option>
             <option value="2line">2 Líneas</option>
           </select>
@@ -64,13 +64,14 @@
 
         <div class="enterText" id="enterText1">
           <form
+            id="formGenM1"
             class="formGen"
             method="POST"
             action="/engraveSlot1"
             target="hiddenFrame"
           >
             <input id="line1M1" name="name" type="text" />
-            <input id="line2M1" name="name" type="text" />
+            <input id="line2M1" name="name2" type="text" />
 
             <input id="generateButtonM1" type="submit" value="Generar Texto" />
           </form>

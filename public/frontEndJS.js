@@ -36,7 +36,6 @@
   var linesM1 = document.getElementById("linesM1")
   linesM1.addEventListener("change", function () {
     if (this.value == "2line") {
-      console.log("I'm close... so close")
       line2M1.style.display = "block"
     } else if (this.value == "1line") {
       line2M1.style.display = "none"

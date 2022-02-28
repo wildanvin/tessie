@@ -15,9 +15,14 @@ app.use(express.static(path.join(__dirname, "public")))
 
 app.post("/engraveSlot1", (req, res) => {
   const name = req.body.name
+  const name2 = req.body.name2
+  const numberOfLines = req.body.lineList
+
+  console.log(name, name2, numberOfLines)
+  //console.log(req.body)
   global.ncFileName = uuidv1()
-  gCodeGen.engraveSlot1(name, ncFileName)
-  console.log("hello from slot1 ")
+  gCodeGen.engraveSlot1(name, ncFileName, numberOfLines)
+
   res.end()
 })
 
