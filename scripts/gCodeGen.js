@@ -1,7 +1,7 @@
-function engraveSlot1(name, ncFileName) {
+function engraveSlot1(line1, line2, ncFileName, numberOfLines) {
   const wordMaker = require("./wordMaker")
   const fs = require("fs")
-  //const widthSlot1 = 30 this is differetnfor each slot
+  const widthSlot1 = 30
 
   let head = `$H
 G10 P0 L20 X0 Y0 Z0
@@ -11,13 +11,19 @@ G0 X-131.400 Y63.500 F228
 G0 Z-11.700 F228
 G10 P0 L20 X0 Y0 Z0
 G1 Z3.810 F76.2
-M3 S8000`
+M3 S8000
+`
 
   fs.appendFileSync(`./ncFiles/${ncFileName}.nc`, head, function (err) {
     if (err) throw err
   })
 
-  wordMaker.wordMaker(name, ncFileName)
+  if (numberOfLines == "2lines") {
+    wordMaker.wordMaker(widthSlot1, 8.0, line1, ncFileName, "line1")
+    wordMaker.wordMaker(widthSlot1, 8.0, line2, ncFileName, "line2")
+  } else if (numberOfLines == "1lines") {
+    wordMaker.wordMaker(widthSlot1, 3.0, line1, ncFileName, "line1")
+  }
 
   let tail = `M05
 G90 G0 X0 Y0

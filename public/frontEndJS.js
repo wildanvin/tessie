@@ -35,9 +35,9 @@
   line2M1.style.display = "none"
   var linesM1 = document.getElementById("linesM1")
   linesM1.addEventListener("change", function () {
-    if (this.value == "2line") {
+    if (this.value == "2lines") {
       line2M1.style.display = "block"
-    } else if (this.value == "1line") {
+    } else if (this.value == "1lines") {
       line2M1.style.display = "none"
     }
   })
