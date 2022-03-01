@@ -12,9 +12,16 @@
   // Get the <span> element that closes the modal
   var spanM1 = document.getElementsByClassName("close")[0]
 
+  //Select input lines
+  var line2M1 = document.getElementById("line2M1")
+  var line1M1 = document.getElementById("line1M1")
+
   // When the user clicks on the button, open the modal
+  //and clean the input lines es well
   btnM1.onclick = function () {
     modal1.style.display = "block"
+    line2M1.value = ""
+    line1M1.value = ""
   }
 
   // When the user clicks on <span> (x), close the modal
@@ -31,14 +38,16 @@
   })
 
   // Display the number of lines to engrave
-  var line2M1 = document.getElementById("line2M1")
+
   line2M1.style.display = "none"
   var linesM1 = document.getElementById("linesM1")
   linesM1.addEventListener("change", function () {
     if (this.value == "2lines") {
       line2M1.style.display = "block"
+      // line2M1.style.visibility = "visible"
     } else if (this.value == "1lines") {
       line2M1.style.display = "none"
+      // line2M1.style.visibility = "hidden"
     }
   })
 })()

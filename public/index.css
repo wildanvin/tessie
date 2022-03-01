@@ -82,6 +82,7 @@ body {
   background-color: #ccdad1;
   margin: 12vh auto; /* 15vh from the top and centered */
 
+  border-radius: 25px;
   border: 10px solid #f87666;
   width: 75%; /* Could be more or less, depending on screen size */
   height: 70%;
@@ -115,6 +116,19 @@ body {
 
 .options {
   grid-area: options;
+  padding: 1.5vh 1.5vw;
+
+  font-size: 20px;
+  /* font-weight: bold; */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+select {
+  font-size: 20px;
+  /* font-weight: bold; */
+  font-family: Arial, Helvetica, sans-serif;
+
+  border: 6px solid transparent;
 }
 
 .enterText {
@@ -182,7 +196,7 @@ input[type="text"] {
 
   margin: auto;
   border: none;
-  background: #ccdad1;
+  background: #ddd;
 
   font-size: 30px;
   text-align: center;
@@ -215,14 +229,11 @@ input[type="submit"]:focus {
 #generateButtonM2,
 #generateButtonM3,
 #generateButtonM4 {
-  position: relative;
-  top: 26vh;
+  position: fixed;
+  top: 65vh;
 }
 
-#line1M1,
-#lineM2,
-#lineM3,
-#lineM4 {
+.lines {
   position: relative;
   top: 3vh;
 }
