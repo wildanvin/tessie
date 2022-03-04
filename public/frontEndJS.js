@@ -16,12 +16,48 @@
   var line2M1 = document.getElementById("line2M1")
   var line1M1 = document.getElementById("line1M1")
 
-  // When the user clicks on the button, open the modal
-  //and clean the input lines es well
+  //Select generate button in modal 1
+  var generateButtonM1 = document.getElementById("generateButtonM1")
+
+  //Select the options of "1 lines" or 2 "lines"
+  var selectLinesM1 = document.getElementById("linesM1")
+
+  //Every time we change the number of lines to engrave we delete the input values and disable the button
+  selectLinesM1.addEventListener("change", (e) => {
+    line2M1.value = ""
+    line1M1.value = ""
+    generateButtonM1.disabled = true
+  })
+
+  //Validate the input fromm the front end. You can only engrave numbers and
+  //uppercase letters and no more
+
+  line1M1.addEventListener("input", (e) => {
+    if (e.target.value.match(/^[A-Z0-9]+$/g)) {
+      generateButtonM1.disabled = false
+    } else {
+      generateButtonM1.disabled = true
+    }
+  })
+
+  line2M1.addEventListener("input", (e) => {
+    if (e.target.value.match(/^[A-Z0-9]+$/g)) {
+      generateButtonM1.disabled = false
+    } else {
+      generateButtonM1.disabled = true
+    }
+  })
+
+  // When the user clicks on the button:
+  // open the modal
+  // clean the input lines
+  // and show only one line to engrave
   btnM1.onclick = function () {
     modal1.style.display = "block"
     line2M1.value = ""
     line1M1.value = ""
+    selectLinesM1.value = "1lines"
+    line2M1.style.display = "none"
   }
 
   // When the user clicks on <span> (x), close the modal
@@ -44,10 +80,8 @@
   linesM1.addEventListener("change", function () {
     if (this.value == "2lines") {
       line2M1.style.display = "block"
-      // line2M1.style.visibility = "visible"
     } else if (this.value == "1lines") {
       line2M1.style.display = "none"
-      // line2M1.style.visibility = "hidden"
     }
   })
 })()

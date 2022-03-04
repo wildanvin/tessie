@@ -47,19 +47,19 @@ body {
 }
 
 #box-5 {
-  background-color: #ffb800;
-}
-
-#box-6 {
   background-color: #f87666;
 }
 
+#box-6 {
+  background-color: #ffb800;
+}
+
 #box-7 {
-  background-color: #b744b8;
+  background-color: #2274a5;
 }
 
 #box-8 {
-  background-color: #2274a5;
+  background-color: #b744b8;
 }
 
 /* Here starts the code for the modal*/
@@ -216,6 +216,10 @@ input[type="submit"] {
   font-size: 30px;
   text-align: center;
   box-sizing: border-box;
+}
+input[type="submit"]:disabled {
+  background-color: #ddd;
+  outline: none;
 }
 
 input[type="text"]:focus,
