@@ -195,6 +195,52 @@
       </div>
     </div>
 
+    <!-- Modal 4 -->
+    <div id="modal4" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <div class="options">
+          <label for="linesM4">Número de líneas:</label>
+          <select id="linesM4" name="lineList" form="formGenM4">
+            <option value="1lines">1 línea</option>
+            <option value="2lines">2 líneas</option>
+          </select>
+        </div>
+
+        <div class="enterText" id="enterText4">
+          <form
+            id="formGenM4"
+            class="formGen"
+            method="POST"
+            action="/engraveSlot4"
+            target="hiddenFrame"
+          >
+            <input class="lines" id="line1M4" name="line1" type="text" />
+            <br />
+            <input class="lines" id="line2M4" name="line2" type="text" />
+
+            <input
+              disabled="true"
+              class="generateButton"
+              id="generateButtonM4"
+              type="submit"
+              value="Generar Texto"
+            />
+          </form>
+        </div>
+
+        <form
+          class="formGrab"
+          method="POST"
+          action="/sendGCode"
+          target="hiddenFrame"
+        >
+          <input id="engraveButtonM4" type="submit" value="GRABAR" />
+        </form>
+      </div>
+    </div>
+
     <script src="frontEndJS.js"></script>
   </body>
 </html>
