@@ -23,6 +23,7 @@ app.post("/engraveSlot1", (req, res) => {
   global.ncFileName = uuidv1()
   gCodeGen.engraveSlot1(line1, line2, ncFileName, numberOfLines)
 
+  res.sendStatus(200)
   res.end()
 })
 

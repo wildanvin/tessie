@@ -18,9 +18,17 @@
 
   //Select generate button in modal 1
   var generateButtonM1 = document.getElementById("generateButtonM1")
+  var engraveButtonM1 = document.getElementById("engraveButtonM1")
 
   //Select the options of "1 lines" or 2 "lines"
   var selectLinesM1 = document.getElementById("linesM1")
+
+  generateButtonM1.onclick = () => {
+    alert(`Se ha generado el texto: 
+    ${line1M1.value}
+    ${line2M1.value}`)
+    engraveButtonM1.disabled = false
+  }
 
   //Every time we change the number of lines to engrave we delete the input values and disable the button
   selectLinesM1.addEventListener("change", (e) => {
@@ -62,11 +70,14 @@
   // When the user clicks on the button:
   // open the modal
   // clean the input lines
+  // disable generateButton
   // and show only one line to engrave
   btnM1.onclick = function () {
     modal1.style.display = "block"
     line2M1.value = ""
     line1M1.value = ""
+    generateButtonM1.disabled = true
+    engraveButtonM1.disabled = true
     selectLinesM1.value = "1lines"
     line2M1.style.display = "none"
   }
