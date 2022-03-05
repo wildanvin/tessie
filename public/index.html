@@ -84,6 +84,7 @@
 
             <input
               disabled="true"
+              class="generateButton"
               id="generateButtonM1"
               type="submit"
               value="Generar Texto"
@@ -129,6 +130,7 @@
 
             <input
               disabled="true"
+              class="generateButton"
               id="generateButtonM2"
               type="submit"
               value="Generar Texto"
@@ -143,6 +145,52 @@
           target="hiddenFrame"
         >
           <input id="engraveButtonM2" type="submit" value="GRABAR" />
+        </form>
+      </div>
+    </div>
+
+    <!-- Modal 3 -->
+    <div id="modal3" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <div class="options">
+          <label for="linesM3">Número de líneas:</label>
+          <select id="linesM3" name="lineList" form="formGenM3">
+            <option value="1lines">1 línea</option>
+            <option value="2lines">2 líneas</option>
+          </select>
+        </div>
+
+        <div class="enterText" id="enterText3">
+          <form
+            id="formGenM3"
+            class="formGen"
+            method="POST"
+            action="/engraveSlot3"
+            target="hiddenFrame"
+          >
+            <input class="lines" id="line1M3" name="line1" type="text" />
+            <br />
+            <input class="lines" id="line2M3" name="line2" type="text" />
+
+            <input
+              disabled="true"
+              class="generateButton"
+              id="generateButtonM3"
+              type="submit"
+              value="Generar Texto"
+            />
+          </form>
+        </div>
+
+        <form
+          class="formGrab"
+          method="POST"
+          action="/sendGCode"
+          target="hiddenFrame"
+        >
+          <input id="engraveButtonM3" type="submit" value="GRABAR" />
         </form>
       </div>
     </div>

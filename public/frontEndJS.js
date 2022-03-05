@@ -226,10 +226,30 @@
   // Get the <span> element that closes the modal
   var spanM3 = document.getElementsByClassName("close")[2]
 
-  // When the user clicks on the button, open the modal
-  btnM3.onclick = function () {
-    modal3.style.display = "block"
+  //Select input lines
+  var line2M3 = document.getElementById("line2M3")
+  var line1M3 = document.getElementById("line1M3")
+
+  //Select generate button in modal 2
+  var generateButtonM3 = document.getElementById("generateButtonM3")
+  var engraveButtonM3 = document.getElementById("engraveButtonM3")
+
+  //Select the options of "1 lines" or 2 "lines"
+  var selectLinesM3 = document.getElementById("linesM3")
+
+  generateButtonM3.onclick = () => {
+    alert(`Se ha generado el texto: 
+    ${line1M3.value}
+    ${line2M3.value}`)
+    engraveButtonM3.disabled = false
   }
+
+  //Every time we change the number of lines to engrave we delete the input values and disable the button
+  selectLinesM3.addEventListener("change", (e) => {
+    line2M3.value = ""
+    line1M3.value = ""
+    generateButtonM3.disabled = true
+  })
 
   // When the user clicks on <span> (x), close the modal
   spanM3.onclick = function () {
@@ -237,9 +257,67 @@
   }
 
   // When the user clicks anywhere outside of the modal, close it
+
   window.addEventListener("click", function (event) {
     if (event.target == modal3) {
       modal3.style.display = "none"
+    }
+  })
+
+  // When the user clicks on the tag button:
+  // open the modal
+  // clean the input lines
+  // disable generateButton
+  // and show only one line to engrave
+  btnM3.onclick = function () {
+    modal3.style.display = "block"
+    line2M3.value = ""
+    line1M3.value = ""
+    generateButtonM3.disabled = true
+    engraveButtonM3.disabled = true
+    selectLinesM3.value = "1lines"
+    line2M3.style.display = "none"
+  }
+
+  // Display the number of lines to engrave
+
+  line2M3.style.display = "none"
+  var linesM3 = document.getElementById("linesM3")
+  linesM3.addEventListener("change", function () {
+    if (this.value == "2lines") {
+      line2M3.style.display = "block"
+    } else if (this.value == "1lines") {
+      line2M3.style.display = "none"
+    }
+  })
+
+  //Validate the input fromm the front end. You can only engrave numbers and
+  //uppercase letters
+
+  var a,
+    b = false
+
+  line1M3.addEventListener("input", (e) => {
+    if (e.target.value.match(/^[A-Z0-9]+$/g)) {
+      a = true
+      if ((a && b) || line2M3.style.display == "none") {
+        generateButtonM3.disabled = false
+      }
+    } else {
+      a = false
+      generateButtonM3.disabled = true
+    }
+  })
+
+  line2M3.addEventListener("input", (e) => {
+    if (e.target.value.match(/^[A-Z0-9]+$/g)) {
+      b = true
+      if (a && b) {
+        generateButtonM3.disabled = false
+      }
+    } else {
+      b = false
+      generateButtonM3.disabled = true
     }
   })
 })()

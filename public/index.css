@@ -230,10 +230,7 @@ input[type="submit"]:focus {
 
 /*Positioning the elements in the modal so they look nicer:*/
 
-#generateButtonM1,
-#generateButtonM2,
-#generateButtonM3,
-#generateButtonM4 {
+.generateButton {
   position: fixed;
   top: 65vh;
 }
