@@ -18,8 +18,6 @@ app.post("/engraveSlot1", (req, res) => {
   const line2 = req.body.line2
   const numberOfLines = req.body.lineList
 
-  //console.log("hello from server.js", line1, line2, numberOfLines)
-  //console.log(req.body)
   global.ncFileName = uuidv1()
   gCodeGen.engraveSlot1(line1, line2, ncFileName, numberOfLines)
 
@@ -28,20 +26,104 @@ app.post("/engraveSlot1", (req, res) => {
 })
 
 app.post("/engraveSlot2", (req, res) => {
+  const line1 = req.body.line1
+  const line2 = req.body.line2
+  const numberOfLines = req.body.lineList
+
+  global.ncFileName = uuidv1()
+  gCodeGen.engraveSlot2(line1, line2, ncFileName, numberOfLines)
+
+  res.sendStatus(200)
+  res.end()
+})
+
+app.post("/engraveSlot3", (req, res) => {
+  const line1 = req.body.line1
+  const line2 = req.body.line2
+  const numberOfLines = req.body.lineList
+
+  global.ncFileName = uuidv1()
+  gCodeGen.engraveSlot3(line1, line2, ncFileName, numberOfLines)
+
+  res.sendStatus(200)
+  res.end()
+})
+
+app.post("/engraveSlot4", (req, res) => {
+  const line1 = req.body.line1
+  const line2 = req.body.line2
+  const numberOfLines = req.body.lineList
+
+  global.ncFileName = uuidv1()
+  gCodeGen.engraveSlot4(line1, line2, ncFileName, numberOfLines)
+
+  res.sendStatus(200)
+  res.end()
+})
+
+app.post("/engraveSlot5", (req, res) => {
+  const line1 = req.body.line1
+  const line2 = req.body.line2
+  const numberOfLines = req.body.lineList
+
+  global.ncFileName = uuidv1()
+  gCodeGen.engraveSlot5(line1, line2, ncFileName, numberOfLines)
+
+  res.sendStatus(200)
+  res.end()
+})
+
+app.post("/engraveSlot6", (req, res) => {
+  const line1 = req.body.line1
+  const line2 = req.body.line2
+  const numberOfLines = req.body.lineList
+
+  global.ncFileName = uuidv1()
+  gCodeGen.engraveSlot6(line1, line2, ncFileName, numberOfLines)
+
+  res.sendStatus(200)
+  res.end()
+})
+
+app.post("/engraveSlot7", (req, res) => {
+  const line1 = req.body.line1
+  const line2 = req.body.line2
+  const numberOfLines = req.body.lineList
+
+  global.ncFileName = uuidv1()
+  gCodeGen.engraveSlot7(line1, line2, ncFileName, numberOfLines)
+
+  res.sendStatus(200)
+  res.end()
+})
+
+app.post("/engraveSlot8", (req, res) => {
+  const line1 = req.body.line1
+  const line2 = req.body.line2
+  const numberOfLines = req.body.lineList
+
+  global.ncFileName = uuidv1()
+  gCodeGen.engraveSlot3(line1, line2, ncFileName, numberOfLines)
+
+  res.sendStatus(200)
+  res.end()
+})
+
+app.post("/engraveSlot2OLD", (req, res) => {
   const name = req.body.name
   global.ncFileName = uuidv1()
   gCodeGen.engraveSlot2(name, ncFileName)
   res.end()
 })
 
-app.post("/engraveSlot3", (req, res) => {
+app.post("/engraveSlot3OLD", (req, res) => {
   const name = req.body.name
   global.ncFileName = uuidv1()
   gCodeGen.engraveSlot3(name, ncFileName)
   res.end()
 })
 
-app.post("/engraveSlot4", (req, res) => {
+app.post("/engraveSlot4OLD", (req, res) => {
   const name = req.body.name
   global.ncFileName = uuidv1()
   gCodeGen.engraveSlot4(name, ncFileName)

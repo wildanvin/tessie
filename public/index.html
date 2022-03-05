@@ -56,7 +56,8 @@
       </div>
     </div>
 
-    <!-- The Modal 1 -->
+    <!-- ***************************************** Start of the modals *****************************************-->
+    <!-- Modal 1 -->
     <div id="modal1" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
@@ -101,24 +102,37 @@
       </div>
     </div>
 
-    <!-- The Modal 2 -->
+    <!-- Modal 2 -->
     <div id="modal2" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
-        <span class="options">
-          <!-- Opciones "These are the options to engrave in 2 lines, this will be implemented in the future" --></span
-        >
+
+        <div class="options">
+          <label for="linesM2">Número de líneas:</label>
+          <select id="linesM2" name="lineList" form="formGenM2">
+            <option value="1lines">1 línea</option>
+            <option value="2lines">2 líneas</option>
+          </select>
+        </div>
 
         <div class="enterText" id="enterText2">
           <form
+            id="formGenM2"
             class="formGen"
             method="POST"
             action="/engraveSlot2"
             target="hiddenFrame"
           >
-            <input id="lineM2" name="name" type="text" />
+            <input class="lines" id="line1M2" name="line1" type="text" />
+            <br />
+            <input class="lines" id="line2M2" name="line2" type="text" />
 
-            <input id="generateButtonM2" type="submit" value="Generar Texto" />
+            <input
+              disabled="true"
+              id="generateButtonM2"
+              type="submit"
+              value="Generar Texto"
+            />
           </form>
         </div>
 
@@ -129,70 +143,6 @@
           target="hiddenFrame"
         >
           <input id="engraveButtonM2" type="submit" value="GRABAR" />
-        </form>
-      </div>
-    </div>
-
-    <!-- The Modal 3 -->
-    <div id="modal3" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <span class="options">
-          <!-- Opciones "These are the options to engrave in 2 lines, this will be implemented in the future" --></span
-        >
-
-        <div class="enterText" id="enterText3">
-          <form
-            class="formGen"
-            method="POST"
-            action="/engraveSlot3"
-            target="hiddenFrame"
-          >
-            <input id="lineM3" name="name" type="text" />
-
-            <input id="generateButtonM3" type="submit" value="Generar Texto" />
-          </form>
-        </div>
-
-        <form
-          class="formGrab"
-          method="POST"
-          action="/sendGCode"
-          target="hiddenFrame"
-        >
-          <input id="engraveButtonM3" type="submit" value="GRABAR" />
-        </form>
-      </div>
-    </div>
-
-    <!-- The Modal 4 -->
-    <div id="modal4" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <span class="options">
-          <!-- Opciones "These are the options to engrave in 2 lines, this will be implemented in the future" --></span
-        >
-
-        <div class="enterText" id="enterText4">
-          <form
-            class="formGen"
-            method="POST"
-            action="/engraveSlot4"
-            target="hiddenFrame"
-          >
-            <input id="lineM4" name="name" type="text" />
-
-            <input id="generateButtonM4" type="submit" value="Generar Texto" />
-          </form>
-        </div>
-
-        <form
-          class="formGrab"
-          method="POST"
-          action="/sendGCode"
-          target="hiddenFrame"
-        >
-          <input id="engraveButtonM4" type="submit" value="GRABAR" />
         </form>
       </div>
     </div>
