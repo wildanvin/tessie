@@ -535,3 +535,109 @@
     }
   })
 })()
+
+/*The Modal 6*/
+;(() => {
+  // Get the modal
+  var modal6 = document.getElementById("modal6")
+
+  // Get the button that opens the modal
+  var btnM6 = document.getElementById("box-6")
+
+  // Get the <span> element that closes the modal
+  var spanM6 = document.getElementsByClassName("close")[5]
+
+  //Select input lines
+  var line2M6 = document.getElementById("line2M6")
+  var line1M6 = document.getElementById("line1M6")
+
+  //Select generate button in modal 5
+  var generateButtonM6 = document.getElementById("generateButtonM6")
+  var engraveButtonM6 = document.getElementById("engraveButtonM6")
+
+  //Select the options of "1 lines" or 2 "lines"
+  var selectLinesM6 = document.getElementById("linesM6")
+  generateButtonM6.onclick = () => {
+    alert(`Se ha generado el texto: 
+    ${line1M6.value}
+    ${line2M6.value}`)
+    engraveButtonM6.disabled = false
+  }
+
+  //Every time we change the number of lines to engrave we delete the input values and disable the button
+  selectLinesM6.addEventListener("change", (e) => {
+    line2M6.value = ""
+    line1M6.value = ""
+    generateButtonM6.disabled = true
+  })
+
+  // When the user clicks on <span> (x), close the modal
+  spanM6.onclick = function () {
+    modal6.style.display = "none"
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+
+  window.addEventListener("click", function (event) {
+    if (event.target == modal6) {
+      modal6.style.display = "none"
+    }
+  })
+
+  // When the user clicks on the tag button:
+  // open the modal
+  // clean the input lines
+  // disable generateButton
+  // and show only one line to engrave
+  btnM6.onclick = function () {
+    modal6.style.display = "block"
+    line2M6.value = ""
+    line1M6.value = ""
+    generateButtonM6.disabled = true
+    engraveButtonM6.disabled = true
+    selectLinesM6.value = "1lines"
+    line2M6.style.display = "none"
+  }
+
+  // Display the number of lines to engrave
+
+  line2M6.style.display = "none"
+  var linesM6 = document.getElementById("linesM6")
+  linesM6.addEventListener("change", function () {
+    if (this.value == "2lines") {
+      line2M6.style.display = "block"
+    } else if (this.value == "1lines") {
+      line2M6.style.display = "none"
+    }
+  })
+
+  //Validate the input fromm the front end. You can only engrave numbers and
+  //uppercase letters
+
+  var a,
+    b = false
+
+  line1M6.addEventListener("input", (e) => {
+    if (e.target.value.match(/^[A-Z0-9]+$/g)) {
+      a = true
+      if ((a && b) || line2M6.style.display == "none") {
+        generateButtonM6.disabled = false
+      }
+    } else {
+      a = false
+      generateButtonM6.disabled = true
+    }
+  })
+
+  line2M6.addEventListener("input", (e) => {
+    if (e.target.value.match(/^[A-Z0-9]+$/g)) {
+      b = true
+      if (a && b) {
+        generateButtonM6.disabled = false
+      }
+    } else {
+      b = false
+      generateButtonM6.disabled = true
+    }
+  })
+})()
