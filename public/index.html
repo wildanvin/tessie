@@ -333,6 +333,52 @@
       </div>
     </div>
 
+    <!-- Modal 7 -->
+    <div id="modal7" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+
+        <div class="options">
+          <label for="linesM7">Número de líneas:</label>
+          <select id="linesM7" name="lineList" form="formGenM7">
+            <option value="1lines">1 línea</option>
+            <option value="2lines">2 líneas</option>
+          </select>
+        </div>
+
+        <div class="enterText" id="enterText7">
+          <form
+            id="formGenM7"
+            class="formGen"
+            method="POST"
+            action="/engraveSlot7"
+            target="hiddenFrame"
+          >
+            <input class="lines" id="line1M7" name="line1" type="text" />
+            <br />
+            <input class="lines" id="line2M7" name="line2" type="text" />
+
+            <input
+              disabled="true"
+              class="generateButton"
+              id="generateButtonM7"
+              type="submit"
+              value="Generar Texto"
+            />
+          </form>
+        </div>
+
+        <form
+          class="formGrab"
+          method="POST"
+          action="/sendGCode"
+          target="hiddenFrame"
+        >
+          <input id="engraveButtonM7" type="submit" value="GRABAR" />
+        </form>
+      </div>
+    </div>
+
     <script src="frontEndJS.js"></script>
   </body>
 </html>
