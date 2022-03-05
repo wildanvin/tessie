@@ -30,20 +30,31 @@
   })
 
   //Validate the input fromm the front end. You can only engrave numbers and
-  //uppercase letters and no more
+  //uppercase letters
+
+  var a,
+    b = false
 
   line1M1.addEventListener("input", (e) => {
     if (e.target.value.match(/^[A-Z0-9]+$/g)) {
-      generateButtonM1.disabled = false
+      a = true
+      if ((a && b) || line2M1.style.display == "none") {
+        generateButtonM1.disabled = false
+      }
     } else {
+      a = false
       generateButtonM1.disabled = true
     }
   })
 
   line2M1.addEventListener("input", (e) => {
     if (e.target.value.match(/^[A-Z0-9]+$/g)) {
-      generateButtonM1.disabled = false
+      b = true
+      if (a && b) {
+        generateButtonM1.disabled = false
+      }
     } else {
+      b = false
       generateButtonM1.disabled = true
     }
   })
