@@ -147,54 +147,62 @@ select {
   background-size: cover;
 
   position: relative;
-  bottom: 8vh;
+  bottom: 18vh;
 }
 
 #enterText1 {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   background-image: url("./icons/bone.svg");
+  position: relative;
+  bottom: 15vh;
 }
 
 #enterText2 {
-  width: 300px;
-  height: 300px;
+  width: 450px;
+  height: 450px;
   background-image: url("./icons/paw.svg");
 }
 
 #enterText3 {
-  width: 300px;
-  height: 300px;
+  width: 450px;
+  height: 450px;
   background-image: url("./icons/circularWithRing.svg");
+  position: relative;
+  bottom: 21vh;
 }
 
 #enterText4 {
-  width: 300px;
-  height: 300px;
+  width: 450px;
+  height: 450px;
   background-image: url("./icons/fish.svg");
 }
 
 #enterText5 {
-  width: 300px;
-  height: 300px;
+  width: 350px;
+  height: 350px;
   background-image: url("./icons/house.svg");
+  position: relative;
+  bottom: 15vh;
 }
 
 #enterText6 {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   background-image: url("./icons/circular.svg");
 }
 
 #enterText7 {
-  width: 300px;
-  height: 300px;
+  width: 500px;
+  height: 500px;
   background-image: url("./icons/cat.svg");
+  position: relative;
+  bottom: 21vh;
 }
 
 #enterText8 {
-  width: 300px;
-  height: 300px;
+  width: 400px;
+  height: 400px;
   background-image: url("./icons/star.svg");
 }
 
@@ -216,16 +224,17 @@ select {
 }
 
 input[type="text"] {
-  width: 90%;
-  padding: 4%;
+  width: 150px;
+  height: 50%;
+  padding: 5px;
 
   margin: auto;
   border: none;
   background: #ddd;
 
-  font-size: 30px;
+  font-size: 25px;
   text-align: center;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 }
 input[type="submit"] {
   width: 200px;
@@ -259,7 +268,25 @@ input[type="submit"]:focus {
   top: 65vh;
 }
 
+.engraveButton {
+  position: fixed;
+  top: 75vh;
+}
+
 .lines {
   position: relative;
-  top: 3vh;
+  top: 0.5vh;
+}
+
+#line1M4,
+#line2M4 {
+  position: relative;
+  top: 1vh;
+  left: 1.3vw;
+}
+
+#line1M3,
+#line2M3 {
+  position: relative;
+  top: 1vh;
 }
