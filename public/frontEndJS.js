@@ -35,6 +35,7 @@
     line2M1.value = ""
     line1M1.value = ""
     generateButtonM1.disabled = true
+    engraveButtonM1.disabled = true
   })
 
   // When the user clicks on <span> (x), close the modal
@@ -142,6 +143,7 @@
     line2M2.value = ""
     line1M2.value = ""
     generateButtonM2.disabled = true
+    engraveButtonM2.disabled = true
   })
 
   // When the user clicks on <span> (x), close the modal
@@ -249,6 +251,7 @@
     line2M3.value = ""
     line1M3.value = ""
     generateButtonM3.disabled = true
+    engraveButtonM3.disabled = true
   })
 
   // When the user clicks on <span> (x), close the modal
@@ -356,6 +359,7 @@
     line2M4.value = ""
     line1M4.value = ""
     generateButtonM4.disabled = true
+    engraveButtonM4.disabled = true
   })
 
   // When the user clicks on <span> (x), close the modal
@@ -463,6 +467,7 @@
     line2M5.value = ""
     line1M5.value = ""
     generateButtonM5.disabled = true
+    engraveButtonM5.disabled = true
   })
 
   // When the user clicks on <span> (x), close the modal
@@ -569,6 +574,7 @@
     line2M6.value = ""
     line1M6.value = ""
     generateButtonM6.disabled = true
+    engraveButtonM6.disabled = true
   })
 
   // When the user clicks on <span> (x), close the modal
@@ -675,6 +681,7 @@
     line2M7.value = ""
     line1M7.value = ""
     generateButtonM7.disabled = true
+    engraveButtonM7.disabled = true
   })
 
   // When the user clicks on <span> (x), close the modal
@@ -781,6 +788,7 @@
     line2M8.value = ""
     line1M8.value = ""
     generateButtonM8.disabled = true
+    engraveButtonM8.disabled = true
   })
   // When the user clicks on <span> (x), close the modal
   spanM8.onclick = function () {
