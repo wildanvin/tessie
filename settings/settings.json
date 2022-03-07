@@ -1,0 +1,16 @@
+{
+  "tag1": {
+    "startX": -111.135,
+    "startY": 2.0,
+    "startZ": 3.0,
+    "width": 3.2,
+    "height": 3.1
+  },
+  "tag2": {
+    "startX": 1.0,
+    "startY": 2.0,
+    "startZ": 3.0,
+    "width": 3.2,
+    "height": 3.1
+  }
+}

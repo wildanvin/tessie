@@ -1,8 +1,11 @@
 function engraveSlot1(line1, line2, ncFileName, numberOfLines) {
-  const wordMaker = require("./wordMaker")
   const fs = require("fs")
+
+  const wordMaker = require("./wordMaker")
+  const settings = require("../settings/settings.json")
   const widthSlot1 = 30
 
+  console.log(settings.tag1.startX)
   let head = `$H
 G10 P0 L20 X0 Y0 Z0
 G21
