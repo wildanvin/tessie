@@ -12,5 +12,12 @@
     "startZ": -6.84,
     "width": 10,
     "height": 19
+  },
+  "tag3": {
+    "startX": -67.3,
+    "startY": 55.9,
+    "startZ": -6.85,
+    "width": 10,
+    "height": 19
   }
 }
