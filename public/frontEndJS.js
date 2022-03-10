@@ -85,7 +85,7 @@
     b = false
 
   line1M1.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
       a = true
       if ((a && b) || line2M1.style.display == "none") {
         generateButtonM1.disabled = false
@@ -97,7 +97,7 @@
   })
 
   line2M1.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
       b = true
       if (a && b) {
         generateButtonM1.disabled = false
@@ -193,7 +193,7 @@
     b = false
 
   line1M2.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
       a = true
       if ((a && b) || line2M2.style.display == "none") {
         generateButtonM2.disabled = false
@@ -205,7 +205,7 @@
   })
 
   line2M2.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
       b = true
       if (a && b) {
         generateButtonM2.disabled = false
@@ -301,7 +301,7 @@
     b = false
 
   line1M3.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
       a = true
       if ((a && b) || line2M3.style.display == "none") {
         generateButtonM3.disabled = false
@@ -313,7 +313,7 @@
   })
 
   line2M3.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
       b = true
       if (a && b) {
         generateButtonM3.disabled = false
@@ -409,7 +409,7 @@
     b = false
 
   line1M4.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
       a = true
       if ((a && b) || line2M4.style.display == "none") {
         generateButtonM4.disabled = false
@@ -421,7 +421,7 @@
   })
 
   line2M4.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
       b = true
       if (a && b) {
         generateButtonM4.disabled = false
@@ -517,7 +517,7 @@
     b = false
 
   line1M5.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
       a = true
       if ((a && b) || line2M5.style.display == "none") {
         generateButtonM5.disabled = false
@@ -529,7 +529,7 @@
   })
 
   line2M5.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
       b = true
       if (a && b) {
         generateButtonM5.disabled = false
@@ -624,7 +624,7 @@
     b = false
 
   line1M6.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
       a = true
       if ((a && b) || line2M6.style.display == "none") {
         generateButtonM6.disabled = false
@@ -636,7 +636,7 @@
   })
 
   line2M6.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
       b = true
       if (a && b) {
         generateButtonM6.disabled = false
@@ -731,7 +731,7 @@
     b = false
 
   line1M7.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
       a = true
       if ((a && b) || line2M7.style.display == "none") {
         generateButtonM7.disabled = false
@@ -743,7 +743,7 @@
   })
 
   line2M7.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
       b = true
       if (a && b) {
         generateButtonM7.disabled = false
@@ -837,7 +837,7 @@
     b = false
 
   line1M8.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
       a = true
       if ((a && b) || line2M8.style.display == "none") {
         generateButtonM8.disabled = false
@@ -849,7 +849,7 @@
   })
 
   line2M8.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
       b = true
       if (a && b) {
         generateButtonM8.disabled = false
