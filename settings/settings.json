@@ -4,6 +4,7 @@
     "startY": 57.2,
     "startZ": -6.58,
     "width": 31,
+    "realWidth": 31,
     "height": 17
   },
   "tag2": {
@@ -11,6 +12,7 @@
     "startY": 55.2,
     "startZ": -6.84,
     "width": 10,
+    "realWidth": 20,
     "height": 19
   },
   "tag3": {
@@ -18,6 +20,7 @@
     "startY": 55.9,
     "startZ": -6.85,
     "width": 10,
+    "realWidth": 20,
     "height": 19
   },
   "tag4": {
@@ -25,6 +28,39 @@
     "startY": 57,
     "startZ": -7.15,
     "width": 30,
+    "realWidth": 30,
     "height": 13
+  },
+  "tag5": {
+    "startX": -150.2,
+    "startY": 7.2,
+    "startZ": -6.53,
+    "width": 20,
+    "realWidth": 30,
+    "height": 25
+  },
+  "tag6": {
+    "startX": -104.5,
+    "startY": 12.8,
+    "startZ": -6.71,
+    "width": 15,
+    "realWidth": 25,
+    "height": 16
+  },
+  "tag7": {
+    "startX": -68.7,
+    "startY": 11.8,
+    "startZ": -6.76,
+    "width": 11,
+    "realWidth": 21,
+    "height": 13
+  },
+  "tag8": {
+    "startX": -32.3,
+    "startY": 6.9,
+    "startZ": -6.62,
+    "width": 15,
+    "realWidth": 25,
+    "height": 20
   }
 }

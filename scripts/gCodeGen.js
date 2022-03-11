@@ -129,6 +129,7 @@ G10 P0 L20 X0 Y0 Z0`
     if (err) throw err
   })
 }
+
 function engraveSlot4(line1, line2, ncFileName, numberOfLines) {
   const fs = require("fs")
   const wordMaker = require("./wordMaker")
@@ -173,134 +174,19 @@ G10 P0 L20 X0 Y0 Z0`
   })
 }
 
-function engraveSlot2OLD(line1, line2, ncFileName, numberOfLines) {
-  const wordMaker = require("./wordMaker")
-  const fs = require("fs")
-  const widthSlot1 = 30
-
-  let head = `$H
-G10 P0 L20 X0 Y0 Z0
-G21
-G90
-G0 X-131.400 Y63.500 F228
-G0 Z-11.700 F228
-G10 P0 L20 X0 Y0 Z0
-G1 Z3.810 F76.2
-M3 S8000
-`
-
-  fs.appendFileSync(`./ncFiles/${ncFileName}.nc`, head, function (err) {
-    if (err) throw err
-  })
-
-  if (numberOfLines == "2lines") {
-    wordMaker.wordMaker(widthSlot1, 8.0, line1, ncFileName, "line1")
-    wordMaker.wordMaker(widthSlot1, 8.0, line2, ncFileName, "line2")
-  } else if (numberOfLines == "1lines") {
-    wordMaker.wordMaker(widthSlot1, 3.0, line1, ncFileName, "line1")
-  }
-
-  let tail = `M05
-G90 G0 X0 Y0
-G90 G0 Z0
-G4 P0.1
-$H
-G10 P0 L20 X0 Y0 Z0`
-
-  fs.appendFileSync(`./ncFiles/${ncFileName}.nc`, tail, function (err) {
-    if (err) throw err
-  })
-}
-
-function engraveSlot3OLD(line1, line2, ncFileName, numberOfLines) {
-  const wordMaker = require("./wordMaker")
-  const fs = require("fs")
-  const widthSlot1 = 30
-
-  let head = `$H
-G10 P0 L20 X0 Y0 Z0
-G21
-G90
-G0 X-131.400 Y63.500 F228
-G0 Z-11.700 F228
-G10 P0 L20 X0 Y0 Z0
-G1 Z3.810 F76.2
-M3 S8000
-`
-
-  fs.appendFileSync(`./ncFiles/${ncFileName}.nc`, head, function (err) {
-    if (err) throw err
-  })
-
-  if (numberOfLines == "2lines") {
-    wordMaker.wordMaker(widthSlot1, 8.0, line1, ncFileName, "line1")
-    wordMaker.wordMaker(widthSlot1, 8.0, line2, ncFileName, "line2")
-  } else if (numberOfLines == "1lines") {
-    wordMaker.wordMaker(widthSlot1, 3.0, line1, ncFileName, "line1")
-  }
-
-  let tail = `M05
-G90 G0 X0 Y0
-G90 G0 Z0
-G4 P0.1
-$H
-G10 P0 L20 X0 Y0 Z0`
-
-  fs.appendFileSync(`./ncFiles/${ncFileName}.nc`, tail, function (err) {
-    if (err) throw err
-  })
-}
-
-function engraveSlot4OLD(line1, line2, ncFileName, numberOfLines) {
-  const wordMaker = require("./wordMaker")
-  const fs = require("fs")
-  const widthSlot1 = 30
-
-  let head = `$H
-G10 P0 L20 X0 Y0 Z0
-G21
-G90
-G0 X-131.400 Y63.500 F228
-G0 Z-11.700 F228
-G10 P0 L20 X0 Y0 Z0
-G1 Z3.810 F76.2
-M3 S8000
-`
-
-  fs.appendFileSync(`./ncFiles/${ncFileName}.nc`, head, function (err) {
-    if (err) throw err
-  })
-
-  if (numberOfLines == "2lines") {
-    wordMaker.wordMaker(widthSlot1, 8.0, line1, ncFileName, "line1")
-    wordMaker.wordMaker(widthSlot1, 8.0, line2, ncFileName, "line2")
-  } else if (numberOfLines == "1lines") {
-    wordMaker.wordMaker(widthSlot1, 3.0, line1, ncFileName, "line1")
-  }
-
-  let tail = `M05
-G90 G0 X0 Y0
-G90 G0 Z0
-G4 P0.1
-$H
-G10 P0 L20 X0 Y0 Z0`
-
-  fs.appendFileSync(`./ncFiles/${ncFileName}.nc`, tail, function (err) {
-    if (err) throw err
-  })
-}
-
 function engraveSlot5(line1, line2, ncFileName, numberOfLines) {
-  const wordMaker = require("./wordMaker")
   const fs = require("fs")
-  const widthSlot1 = 30
+  const wordMaker = require("./wordMaker")
+  const settings = require("../settings/settings.json")
+
+  const widthSlot5 = settings.tag5.width
 
   let head = `$H
 G10 P0 L20 X0 Y0 Z0
 G21
 G90
-G0 X-131.400 Y63.500 F228
-G0 Z-11.700 F228
+G0 X${settings.tag5.startX} Y${settings.tag5.startY} F228
+G0 Z${settings.tag5.startZ} F228
 G10 P0 L20 X0 Y0 Z0
 G1 Z3.810 F76.2
 M3 S8000
@@ -310,11 +196,14 @@ M3 S8000
     if (err) throw err
   })
 
+  //The spaceInY parameter of the "wordmaker" function is different for each tag
+  //In the future I plan that it will be automtically calculated depending of the height of each tag
+  //For now you have to enter this values manually
   if (numberOfLines == "2lines") {
-    wordMaker.wordMaker(widthSlot1, 8.0, line1, ncFileName, "line1")
-    wordMaker.wordMaker(widthSlot1, 8.0, line2, ncFileName, "line2")
+    wordMaker.wordMaker(widthSlot5, 15, line1, ncFileName)
+    wordMaker.wordMaker(widthSlot5, 10, line2, ncFileName)
   } else if (numberOfLines == "1lines") {
-    wordMaker.wordMaker(widthSlot1, 3.0, line1, ncFileName, "line1")
+    wordMaker.wordMaker(widthSlot5, 10, line1, ncFileName)
   }
 
   let tail = `M05
@@ -330,16 +219,18 @@ G10 P0 L20 X0 Y0 Z0`
 }
 
 function engraveSlot6(line1, line2, ncFileName, numberOfLines) {
-  const wordMaker = require("./wordMaker")
   const fs = require("fs")
-  const widthSlot1 = 30
+  const wordMaker = require("./wordMaker")
+  const settings = require("../settings/settings.json")
+
+  const widthSlot6 = settings.tag6.width
 
   let head = `$H
 G10 P0 L20 X0 Y0 Z0
 G21
 G90
-G0 X-131.400 Y63.500 F228
-G0 Z-11.700 F228
+G0 X${settings.tag6.startX} Y${settings.tag6.startY} F228
+G0 Z${settings.tag6.startZ} F228
 G10 P0 L20 X0 Y0 Z0
 G1 Z3.810 F76.2
 M3 S8000
@@ -349,11 +240,14 @@ M3 S8000
     if (err) throw err
   })
 
+  //The spaceInY parameter of the "wordmaker" function is different for each tag
+  //In the future I plan that it will be automtically calculated depending of the height of each tag
+  //For now you have to enter this values manually
   if (numberOfLines == "2lines") {
-    wordMaker.wordMaker(widthSlot1, 8.0, line1, ncFileName, "line1")
-    wordMaker.wordMaker(widthSlot1, 8.0, line2, ncFileName, "line2")
+    wordMaker.wordMaker(widthSlot6, 8, line1, ncFileName)
+    wordMaker.wordMaker(widthSlot6, 3, line2, ncFileName)
   } else if (numberOfLines == "1lines") {
-    wordMaker.wordMaker(widthSlot1, 3.0, line1, ncFileName, "line1")
+    wordMaker.wordMaker(widthSlot6, 7, line1, ncFileName)
   }
 
   let tail = `M05
@@ -369,16 +263,18 @@ G10 P0 L20 X0 Y0 Z0`
 }
 
 function engraveSlot7(line1, line2, ncFileName, numberOfLines) {
-  const wordMaker = require("./wordMaker")
   const fs = require("fs")
-  const widthSlot1 = 30
+  const wordMaker = require("./wordMaker")
+  const settings = require("../settings/settings.json")
+
+  const widthSlot7 = settings.tag7.width
 
   let head = `$H
 G10 P0 L20 X0 Y0 Z0
 G21
 G90
-G0 X-131.400 Y63.500 F228
-G0 Z-11.700 F228
+G0 X${settings.tag7.startX} Y${settings.tag7.startY} F228
+G0 Z${settings.tag7.startZ} F228
 G10 P0 L20 X0 Y0 Z0
 G1 Z3.810 F76.2
 M3 S8000
@@ -388,11 +284,14 @@ M3 S8000
     if (err) throw err
   })
 
+  //The spaceInY parameter of the "wordmaker" function is different for each tag
+  //In the future I plan that it will be automtically calculated depending of the height of each tag
+  //For now you have to enter this values manually
   if (numberOfLines == "2lines") {
-    wordMaker.wordMaker(widthSlot1, 8.0, line1, ncFileName, "line1")
-    wordMaker.wordMaker(widthSlot1, 8.0, line2, ncFileName, "line2")
+    wordMaker.wordMaker(widthSlot7, 6, line1, ncFileName)
+    wordMaker.wordMaker(widthSlot7, 1, line2, ncFileName)
   } else if (numberOfLines == "1lines") {
-    wordMaker.wordMaker(widthSlot1, 3.0, line1, ncFileName, "line1")
+    wordMaker.wordMaker(widthSlot7, 3, line1, ncFileName)
   }
 
   let tail = `M05
@@ -408,16 +307,18 @@ G10 P0 L20 X0 Y0 Z0`
 }
 
 function engraveSlot8(line1, line2, ncFileName, numberOfLines) {
-  const wordMaker = require("./wordMaker")
   const fs = require("fs")
-  const widthSlot1 = 30
+  const wordMaker = require("./wordMaker")
+  const settings = require("../settings/settings.json")
+
+  const widthSlot8 = settings.tag8.width
 
   let head = `$H
 G10 P0 L20 X0 Y0 Z0
 G21
 G90
-G0 X-131.400 Y63.500 F228
-G0 Z-11.700 F228
+G0 X${settings.tag8.startX} Y${settings.tag8.startY} F228
+G0 Z${settings.tag8.startZ} F228
 G10 P0 L20 X0 Y0 Z0
 G1 Z3.810 F76.2
 M3 S8000
@@ -427,11 +328,14 @@ M3 S8000
     if (err) throw err
   })
 
+  //The spaceInY parameter of the "wordmaker" function is different for each tag
+  //In the future I plan that it will be automtically calculated depending of the height of each tag
+  //For now you have to enter this values manually
   if (numberOfLines == "2lines") {
-    wordMaker.wordMaker(widthSlot1, 8.0, line1, ncFileName, "line1")
-    wordMaker.wordMaker(widthSlot1, 8.0, line2, ncFileName, "line2")
+    wordMaker.wordMaker(widthSlot8, 14, line1, ncFileName)
+    wordMaker.wordMaker(widthSlot8, 10, line2, ncFileName)
   } else if (numberOfLines == "1lines") {
-    wordMaker.wordMaker(widthSlot1, 3.0, line1, ncFileName, "line1")
+    wordMaker.wordMaker(widthSlot8, 10, line1, ncFileName)
   }
 
   let tail = `M05
