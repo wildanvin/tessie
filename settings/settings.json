@@ -19,5 +19,12 @@
     "startZ": -6.85,
     "width": 10,
     "height": 19
+  },
+  "tag4": {
+    "startX": -38.3,
+    "startY": 57,
+    "startZ": -7.15,
+    "width": 30,
+    "height": 13
   }
 }
