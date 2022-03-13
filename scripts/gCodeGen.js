@@ -1,9 +1,10 @@
 function engraveSlot1(line1, line2, ncFileName, numberOfLines) {
   const fs = require("fs")
   const wordMaker = require("./wordMaker")
+  const spacerInY = require("./spacerInY")
   const settings = require("../settings/settings.json")
 
-  const widthSlot1 = settings.tag1.width
+  const widthSlot = settings.tag1.width
 
   let head = `$H
 G10 P0 L20 X0 Y0 Z0
@@ -20,14 +21,14 @@ M3 S8000
     if (err) throw err
   })
 
-  //The spaceInY parameter of the "wordmaker" function is different for each tag
-  //In the future I plan that it will be automtically calculated depending of the height of each tag
-  //For now you have to enter this values manually
   if (numberOfLines == "2lines") {
-    wordMaker.wordMaker(widthSlot1, 9.0, line1, ncFileName)
-    wordMaker.wordMaker(widthSlot1, 4.5, line2, ncFileName)
+    let [a, b] = spacerInY.line2(settings.tag1.height, line1, line2)
+    wordMaker.wordMaker(widthSlot, a, line1, ncFileName)
+    wordMaker.wordMaker(widthSlot, b, line2, ncFileName)
   } else if (numberOfLines == "1lines") {
-    wordMaker.wordMaker(widthSlot1, 9.5, line1, ncFileName)
+    let c = spacerInY.line1(settings.tag1.height, line1)
+
+    wordMaker.wordMaker(widthSlot, c, line1, ncFileName)
   }
 
   let tail = `M05
