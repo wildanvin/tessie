@@ -29,9 +29,15 @@ M3 S8000
   })
 
   if (numberOfLines == "2lines") {
-    let [a, b] = spacerInY.line2(settings.tag1.height, line1, line2)
-    wordMaker.wordMaker(widthSlot, a, line1, ncFileName)
-    wordMaker.wordMaker(widthSlot, b, line2, ncFileName)
+    let [a, b] = spacerInY.line2(
+      settings.tag1.height,
+      line1,
+      line2,
+      _templateName1,
+      _templateName2
+    )
+    wordMaker.wordMaker(widthSlot, a, line1, ncFileName, _templateName1)
+    wordMaker.wordMaker(widthSlot, b, line2, ncFileName, _templateName2)
   } else if (numberOfLines == "1lines") {
     let c = spacerInY.line1(settings.tag1.height, line1, _templateName1)
     wordMaker.wordMaker(widthSlot, c, line1, ncFileName, _templateName1)

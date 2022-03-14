@@ -21,10 +21,21 @@ app.post("/engraveSlot1", (req, res) => {
 
   if (numberOfLines == "1lines") {
     let a = doesTextFits.line1(line1, "tag1")
-    console.log(a)
+
     if (a) {
       global.ncFileName = uuidv1()
       gCodeGen.engraveSlot1(line1, line2, ncFileName, numberOfLines, a)
+    } else {
+      return res.status(400).send("El texto es muy largo ")
+    }
+  }
+
+  if (numberOfLines == "2lines") {
+    let a = doesTextFits.line2(line1, line2, "tag1")
+
+    if (a) {
+      global.ncFileName = uuidv1()
+      gCodeGen.engraveSlot1(line1, line2, ncFileName, numberOfLines, a[0], a[1])
     } else {
       return res.status(400).send("El texto es muy largo ")
     }
