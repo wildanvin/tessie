@@ -1,4 +1,11 @@
-function engraveSlot1(line1, line2, ncFileName, numberOfLines) {
+function engraveSlot1(
+  line1,
+  line2,
+  ncFileName,
+  numberOfLines,
+  _templateName1,
+  _templateName2
+) {
   const fs = require("fs")
   const wordMaker = require("./wordMaker")
   const spacerInY = require("./spacerInY")
@@ -26,9 +33,8 @@ M3 S8000
     wordMaker.wordMaker(widthSlot, a, line1, ncFileName)
     wordMaker.wordMaker(widthSlot, b, line2, ncFileName)
   } else if (numberOfLines == "1lines") {
-    let c = spacerInY.line1(settings.tag1.height, line1)
-
-    wordMaker.wordMaker(widthSlot, c, line1, ncFileName)
+    let c = spacerInY.line1(settings.tag1.height, line1, _templateName1)
+    wordMaker.wordMaker(widthSlot, c, line1, ncFileName, _templateName1)
   }
 
   let tail = `M05

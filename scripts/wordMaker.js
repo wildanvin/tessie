@@ -1,9 +1,9 @@
-function wordMaker(_widthSlot, spaceInY, input, ncFileName) {
+function wordMaker(_widthSlot, spaceInY, input, ncFileName, _templateName) {
   console.log(
     `Hello from wordMaker. We are going to engrave ${input} and the filename is ${ncFileName} `
   )
 
-  const template = require("../templates/template1.json")
+  const template = require(`../templates/${_templateName}`)
   const fs = require("fs")
   const text = input
   const widthSlot = _widthSlot

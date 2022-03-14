@@ -4,6 +4,7 @@ const { v1: uuidv1 } = require("uuid")
 
 const gCodeGen = require("./scripts/gCodeGen")
 const sendGCode = require("./scripts/sendGCode")
+const doesTextFits = require("./scripts/doesTextFits")
 
 const app = express()
 
@@ -18,8 +19,16 @@ app.post("/engraveSlot1", (req, res) => {
   const line2 = req.body.line2
   const numberOfLines = req.body.lineList
 
-  global.ncFileName = uuidv1()
-  gCodeGen.engraveSlot1(line1, line2, ncFileName, numberOfLines)
+  if (numberOfLines == "1lines") {
+    let a = doesTextFits.line1(line1, "tag1")
+    console.log(a)
+    if (a) {
+      global.ncFileName = uuidv1()
+      gCodeGen.engraveSlot1(line1, line2, ncFileName, numberOfLines, a)
+    } else {
+      return res.status(400).send("El texto es muy largo ")
+    }
+  }
 
   res.sendStatus(200)
   res.end()
