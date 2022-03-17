@@ -24,10 +24,31 @@
   var selectLinesM1 = document.getElementById("linesM1")
 
   generateButtonM1.onclick = () => {
-    alert(`Se ha generado el texto: 
-    ${line1M1.value}
-    ${line2M1.value}`)
     engraveButtonM1.disabled = false
+
+    fetch("/engraveSlot1", {
+      method: "POST",
+      headers: new Headers({
+        "Content-Type": "application/json; charset=UTF-8",
+      }),
+      body: JSON.stringify({
+        line1: line1M1.value,
+        line2: line2M1.value,
+        lineList: selectLinesM1.value,
+      }),
+    })
+      .then((res) => {
+        if (res.ok) {
+          console.log("Text is good")
+          alert(`Se ha generado el texto: 
+          ${line1M1.value}
+          ${line2M1.value}`)
+        } else {
+          console.log("Text is too long")
+          alert(`El texto es muy largo. Intente con un nombre mas corto`)
+        }
+      })
+      .catch((error) => console.log("Error"))
   }
 
   //Every time we change the number of lines to engrave we delete the input values and disable the button
