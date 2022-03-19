@@ -4,6 +4,8 @@ dist
 #nc files
 *.nc
 
+*.png
+
 # local env files
 .env.local
 .env.*.local
