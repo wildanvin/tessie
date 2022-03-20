@@ -1,8 +1,8 @@
 node_modules
 dist
 
+ncFiles/
 #nc files
-*.nc
 
 *.png
 
