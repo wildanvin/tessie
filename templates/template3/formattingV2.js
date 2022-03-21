@@ -50,7 +50,7 @@ let letters = [
 
 var fs = require("fs")
 
-const template = require("./template2.json")
+const template = require("./template3.json")
 
 for (let el of letters) {
   var fileName = `./${el}.nc` // path to file
@@ -72,7 +72,7 @@ for (let el of letters) {
     //console.log(template)
     var jsonContent = JSON.stringify(template)
 
-    fs.writeFile("./template2.json", jsonContent, "utf8", function (err) {
+    fs.writeFile("./template3.json", jsonContent, "utf8", function (err) {
       if (err) {
         console.log("An error occured while writing JSON Object to File.")
         return console.log(err)
