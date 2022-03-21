@@ -1,0 +1,1 @@
+These are the settings used to generate the nc files of each letter for each template. If you want to add new symbols is better to follow the setting shown in the images so when used together they look nice
