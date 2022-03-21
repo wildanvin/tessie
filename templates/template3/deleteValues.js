@@ -4,7 +4,7 @@ const fs = require("fs")
 
 for (let i in template) {
   template[i]["values"] = []
-  template[i]["width"] = 0
+  //template[i]["width"] = 0
 }
 
 var jsonContent = JSON.stringify(template)
