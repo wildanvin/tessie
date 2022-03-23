@@ -1,5 +1,4 @@
 //I separeted the JS in different functions. Each functions controls each modal.
-//I don't know if this is the ideal way to do it but it works :)
 
 /* Modal 1*/
 ;(() => {
@@ -23,6 +22,7 @@
   //Select the options of "1 lines" or 2 "lines"
   var selectLinesM1 = document.getElementById("linesM1")
 
+  //Make the POST request using fetch
   generateButtonM1.onclick = () => {
     engraveButtonM1.disabled = false
 
@@ -45,10 +45,19 @@
           ${line2M1.value}`)
         } else {
           console.log("Text is too long")
-          alert(`El texto es muy largo. Intente con un nombre mas corto`)
+          alert(`El texto es muy largo. Intente con un texto mas corto`)
         }
       })
       .catch((error) => console.log("Error"))
+  }
+
+  //when the engrave button is pressed alert ans close the modal
+  engraveButtonM1.onclick = () => {
+    alert(`Se va a grabar el texto: 
+            ${line1M1.value}
+            ${line2M1.value}`)
+
+    modal1.style.display = "none"
   }
 
   //Every time we change the number of lines to engrave we delete the input values and disable the button
@@ -106,7 +115,7 @@
     b = false
 
   line1M1.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚÑ]+$/g)) {
       a = true
       if ((a && b) || line2M1.style.display == "none") {
         generateButtonM1.disabled = false
@@ -118,7 +127,7 @@
   })
 
   line2M1.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚÑ]+$/g)) {
       b = true
       if (a && b) {
         generateButtonM1.disabled = false
