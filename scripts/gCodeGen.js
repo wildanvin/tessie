@@ -12,8 +12,6 @@ function generate(
   const spacerInY = require("./spacerInY")
   const settings = require("../settings/settings.json")
 
-  console.log(`Is it right: ${settings[_tagNumber]["width"]}`)
-
   const widthSlot = settings[_tagNumber]["width"]
 
   let head = `$H

@@ -41,8 +41,8 @@
         if (res.ok) {
           console.log("Text is good")
           alert(`Se ha generado el texto: 
-          ${line1M1.value}
-          ${line2M1.value}`)
+                ${line1M1.value}
+                ${line2M1.value}`)
         } else {
           console.log("Text is too long")
           alert(`El texto es muy largo. Intente con un texto mas corto`)
@@ -180,8 +180,8 @@
         if (res.ok) {
           console.log("Text is good")
           alert(`Se ha generado el texto: 
-        ${line1M2.value}
-        ${line2M2.value}`)
+                ${line1M2.value}
+                ${line2M2.value}`)
         } else {
           console.log("Text is too long")
           alert(`El texto es muy largo. Intente con un texto mas corto`)
@@ -300,11 +300,42 @@
   //Select the options of "1 lines" or 2 "lines"
   var selectLinesM3 = document.getElementById("linesM3")
 
+  //Make the POST request using fetch
   generateButtonM3.onclick = () => {
-    alert(`Se ha generado el texto: 
-    ${line1M3.value}
-    ${line2M3.value}`)
     engraveButtonM3.disabled = false
+
+    fetch("/engraveSlot3", {
+      method: "POST",
+      headers: new Headers({
+        "Content-Type": "application/json; charset=UTF-8",
+      }),
+      body: JSON.stringify({
+        line1: line1M3.value,
+        line2: line2M3.value,
+        lineList: selectLinesM3.value,
+      }),
+    })
+      .then((res) => {
+        if (res.ok) {
+          console.log("Text is good")
+          alert(`Se ha generado el texto: 
+                ${line1M3.value}
+                ${line2M3.value}`)
+        } else {
+          console.log("Text is too long")
+          alert(`El texto es muy largo. Intente con un texto mas corto`)
+        }
+      })
+      .catch((error) => console.log("Error"))
+  }
+
+  //when the engrave button is pressed alert ans close the modal
+  engraveButtonM3.onclick = () => {
+    alert(`Se va a grabar el texto: 
+          ${line1M3.value}
+          ${line2M3.value}`)
+
+    modal3.style.display = "none"
   }
 
   //Every time we change the number of lines to engrave we delete the input values and disable the button
@@ -408,11 +439,42 @@
   //Select the options of "1 lines" or 2 "lines"
   var selectLinesM4 = document.getElementById("linesM4")
 
+  //Make the POST request using fetch
   generateButtonM4.onclick = () => {
-    alert(`Se ha generado el texto: 
-    ${line1M4.value}
-    ${line2M4.value}`)
     engraveButtonM4.disabled = false
+
+    fetch("/engraveSlot4", {
+      method: "POST",
+      headers: new Headers({
+        "Content-Type": "application/json; charset=UTF-8",
+      }),
+      body: JSON.stringify({
+        line1: line1M4.value,
+        line2: line2M4.value,
+        lineList: selectLinesM4.value,
+      }),
+    })
+      .then((res) => {
+        if (res.ok) {
+          console.log("Text is good")
+          alert(`Se ha generado el texto: 
+                ${line1M4.value}
+                ${line2M4.value}`)
+        } else {
+          console.log("Text is too long")
+          alert(`El texto es muy largo. Intente con un texto mas corto`)
+        }
+      })
+      .catch((error) => console.log("Error"))
+  }
+
+  //when the engrave button is pressed alert ans close the modal
+  engraveButtonM4.onclick = () => {
+    alert(`Se va a grabar el texto: 
+          ${line1M4.value}
+          ${line2M4.value}`)
+
+    modal4.style.display = "none"
   }
 
   //Every time we change the number of lines to engrave we delete the input values and disable the button
@@ -516,11 +578,42 @@
   //Select the options of "1 lines" or 2 "lines"
   var selectLinesM5 = document.getElementById("linesM5")
 
+  //Make the POST request using fetch
   generateButtonM5.onclick = () => {
-    alert(`Se ha generado el texto: 
-    ${line1M5.value}
-    ${line2M5.value}`)
     engraveButtonM5.disabled = false
+
+    fetch("/engraveSlot5", {
+      method: "POST",
+      headers: new Headers({
+        "Content-Type": "application/json; charset=UTF-8",
+      }),
+      body: JSON.stringify({
+        line1: line1M5.value,
+        line2: line2M5.value,
+        lineList: selectLinesM5.value,
+      }),
+    })
+      .then((res) => {
+        if (res.ok) {
+          console.log("Text is good")
+          alert(`Se ha generado el texto: 
+                ${line1M5.value}
+                ${line2M5.value}`)
+        } else {
+          console.log("Text is too long")
+          alert(`El texto es muy largo. Intente con un texto mas corto`)
+        }
+      })
+      .catch((error) => console.log("Error"))
+  }
+
+  //when the engrave button is pressed alert ans close the modal
+  engraveButtonM5.onclick = () => {
+    alert(`Se va a grabar el texto: 
+          ${line1M5.value}
+          ${line2M5.value}`)
+
+    modal5.style.display = "none"
   }
 
   //Every time we change the number of lines to engrave we delete the input values and disable the button
@@ -623,11 +716,43 @@
 
   //Select the options of "1 lines" or 2 "lines"
   var selectLinesM6 = document.getElementById("linesM6")
+
+  //Make the POST request using fetch
   generateButtonM6.onclick = () => {
-    alert(`Se ha generado el texto: 
-    ${line1M6.value}
-    ${line2M6.value}`)
     engraveButtonM6.disabled = false
+
+    fetch("/engraveSlot6", {
+      method: "POST",
+      headers: new Headers({
+        "Content-Type": "application/json; charset=UTF-8",
+      }),
+      body: JSON.stringify({
+        line1: line1M6.value,
+        line2: line2M6.value,
+        lineList: selectLinesM6.value,
+      }),
+    })
+      .then((res) => {
+        if (res.ok) {
+          console.log("Text is good")
+          alert(`Se ha generado el texto: 
+                ${line1M6.value}
+                ${line2M6.value}`)
+        } else {
+          console.log("Text is too long")
+          alert(`El texto es muy largo. Intente con un texto mas corto`)
+        }
+      })
+      .catch((error) => console.log("Error"))
+  }
+
+  //when the engrave button is pressed alert ans close the modal
+  engraveButtonM6.onclick = () => {
+    alert(`Se va a grabar el texto: 
+          ${line1M6.value}
+          ${line2M6.value}`)
+
+    modal6.style.display = "none"
   }
 
   //Every time we change the number of lines to engrave we delete the input values and disable the button
@@ -730,11 +855,43 @@
 
   //Select the options of "1 lines" or 2 "lines"
   var selectLinesM7 = document.getElementById("linesM7")
+
+  //Make the POST request using fetch
   generateButtonM7.onclick = () => {
-    alert(`Se ha generado el texto: 
-    ${line1M7.value}
-    ${line2M7.value}`)
     engraveButtonM7.disabled = false
+
+    fetch("/engraveSlot7", {
+      method: "POST",
+      headers: new Headers({
+        "Content-Type": "application/json; charset=UTF-8",
+      }),
+      body: JSON.stringify({
+        line1: line1M7.value,
+        line2: line2M7.value,
+        lineList: selectLinesM7.value,
+      }),
+    })
+      .then((res) => {
+        if (res.ok) {
+          console.log("Text is good")
+          alert(`Se ha generado el texto: 
+                ${line1M7.value}
+                ${line2M7.value}`)
+        } else {
+          console.log("Text is too long")
+          alert(`El texto es muy largo. Intente con un texto mas corto`)
+        }
+      })
+      .catch((error) => console.log("Error"))
+  }
+
+  //when the engrave button is pressed alert ans close the modal
+  engraveButtonM7.onclick = () => {
+    alert(`Se va a grabar el texto: 
+          ${line1M7.value}
+          ${line2M7.value}`)
+
+    modal7.style.display = "none"
   }
 
   //Every time we change the number of lines to engrave we delete the input values and disable the button
@@ -837,11 +994,43 @@
 
   //Select the options of "1 lines" or 2 "lines"
   var selectLinesM8 = document.getElementById("linesM8")
+
+  //Make the POST request using fetch
   generateButtonM8.onclick = () => {
-    alert(`Se ha generado el texto: 
-    ${line1M8.value}
-    ${line2M8.value}`)
     engraveButtonM8.disabled = false
+
+    fetch("/engraveSlot8", {
+      method: "POST",
+      headers: new Headers({
+        "Content-Type": "application/json; charset=UTF-8",
+      }),
+      body: JSON.stringify({
+        line1: line1M8.value,
+        line2: line2M8.value,
+        lineList: selectLinesM8.value,
+      }),
+    })
+      .then((res) => {
+        if (res.ok) {
+          console.log("Text is good")
+          alert(`Se ha generado el texto: 
+                ${line1M8.value}
+                ${line2M8.value}`)
+        } else {
+          console.log("Text is too long")
+          alert(`El texto es muy largo. Intente con un texto mas corto`)
+        }
+      })
+      .catch((error) => console.log("Error"))
+  }
+
+  //when the engrave button is pressed alert ans close the modal
+  engraveButtonM8.onclick = () => {
+    alert(`Se va a grabar el texto: 
+          ${line1M8.value}
+          ${line2M8.value}`)
+
+    modal8.style.display = "none"
   }
 
   //Every time we change the number of lines to engrave we delete the input values and disable the button
