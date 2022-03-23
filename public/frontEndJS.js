@@ -161,11 +161,42 @@
   //Select the options of "1 lines" or 2 "lines"
   var selectLinesM2 = document.getElementById("linesM2")
 
+  //Make the POST request using fetch
   generateButtonM2.onclick = () => {
-    alert(`Se ha generado el texto: 
-    ${line1M2.value}
-    ${line2M2.value}`)
     engraveButtonM2.disabled = false
+
+    fetch("/engraveSlot2", {
+      method: "POST",
+      headers: new Headers({
+        "Content-Type": "application/json; charset=UTF-8",
+      }),
+      body: JSON.stringify({
+        line1: line1M2.value,
+        line2: line2M2.value,
+        lineList: selectLinesM2.value,
+      }),
+    })
+      .then((res) => {
+        if (res.ok) {
+          console.log("Text is good")
+          alert(`Se ha generado el texto: 
+        ${line1M2.value}
+        ${line2M2.value}`)
+        } else {
+          console.log("Text is too long")
+          alert(`El texto es muy largo. Intente con un texto mas corto`)
+        }
+      })
+      .catch((error) => console.log("Error"))
+  }
+
+  //when the engrave button is pressed alert ans close the modal
+  engraveButtonM2.onclick = () => {
+    alert(`Se va a grabar el texto: 
+          ${line1M2.value}
+          ${line2M2.value}`)
+
+    modal2.style.display = "none"
   }
 
   //Every time we change the number of lines to engrave we delete the input values and disable the button
@@ -223,7 +254,7 @@
     b = false
 
   line1M2.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚÑ]+$/g)) {
       a = true
       if ((a && b) || line2M2.style.display == "none") {
         generateButtonM2.disabled = false
@@ -235,7 +266,7 @@
   })
 
   line2M2.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚÑ]+$/g)) {
       b = true
       if (a && b) {
         generateButtonM2.disabled = false
@@ -331,7 +362,7 @@
     b = false
 
   line1M3.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚÑ]+$/g)) {
       a = true
       if ((a && b) || line2M3.style.display == "none") {
         generateButtonM3.disabled = false
@@ -343,7 +374,7 @@
   })
 
   line2M3.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚÑ]+$/g)) {
       b = true
       if (a && b) {
         generateButtonM3.disabled = false
@@ -439,7 +470,7 @@
     b = false
 
   line1M4.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚÑ]+$/g)) {
       a = true
       if ((a && b) || line2M4.style.display == "none") {
         generateButtonM4.disabled = false
@@ -451,7 +482,7 @@
   })
 
   line2M4.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚÑ]+$/g)) {
       b = true
       if (a && b) {
         generateButtonM4.disabled = false
@@ -547,7 +578,7 @@
     b = false
 
   line1M5.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚÑ]+$/g)) {
       a = true
       if ((a && b) || line2M5.style.display == "none") {
         generateButtonM5.disabled = false
@@ -559,7 +590,7 @@
   })
 
   line2M5.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚÑ]+$/g)) {
       b = true
       if (a && b) {
         generateButtonM5.disabled = false
@@ -654,7 +685,7 @@
     b = false
 
   line1M6.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚÑ]+$/g)) {
       a = true
       if ((a && b) || line2M6.style.display == "none") {
         generateButtonM6.disabled = false
@@ -666,7 +697,7 @@
   })
 
   line2M6.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚÑ]+$/g)) {
       b = true
       if (a && b) {
         generateButtonM6.disabled = false
@@ -761,7 +792,7 @@
     b = false
 
   line1M7.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚÑ]+$/g)) {
       a = true
       if ((a && b) || line2M7.style.display == "none") {
         generateButtonM7.disabled = false
@@ -773,7 +804,7 @@
   })
 
   line2M7.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚÑ]+$/g)) {
       b = true
       if (a && b) {
         generateButtonM7.disabled = false
@@ -867,7 +898,7 @@
     b = false
 
   line1M8.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚÑ]+$/g)) {
       a = true
       if ((a && b) || line2M8.style.display == "none") {
         generateButtonM8.disabled = false
@@ -879,7 +910,7 @@
   })
 
   line2M8.addEventListener("input", (e) => {
-    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚ]+$/g)) {
+    if (e.target.value.match(/^[A-Z0-9ÁÉÍÓÚÑ]+$/g)) {
       b = true
       if (a && b) {
         generateButtonM8.disabled = false
