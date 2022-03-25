@@ -11,9 +11,6 @@ function sendGCode(ncFileName) {
     let launchOptions = { headless: false, args: ["--start-maximized"] }
 
     const browser = await puppeteer.launch(launchOptions)
-    //const browser = await puppeteer.launch({
-    //executablePath: '/usr/bin/chromium-browser'
-    //});
 
     const page = await browser.newPage()
 
@@ -24,7 +21,7 @@ function sendGCode(ncFileName) {
     )
 
     // go to the target web
-    await page.goto("http://192.168.88.254:8080/")
+    await page.goto("http://localhost:8080/")
 
     //go to "Send file"
     await page.waitFor(500)
