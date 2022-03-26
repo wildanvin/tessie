@@ -4,6 +4,8 @@ const { v1: uuidv1 } = require("uuid")
 
 const gCodeGen = require("./scripts/gCodeGen")
 const sendGCode = require("./scripts/sendGCode")
+const sendGCodeV2 = require("./scripts/sendGCodeV2")
+
 const doesTextFits = require("./scripts/doesTextFits")
 
 const app = express()
@@ -348,6 +350,11 @@ app.post("/engraveSlot8", (req, res) => {
 
 app.post("/sendGCode", (req, res) => {
   sendGCode.sendGCode(ncFileName)
+  res.end()
+})
+
+app.post("/sendGCodeV2", (req, res) => {
+  sendGCodeV2.sendGCodeV2(ncFileName)
   res.end()
 })
 

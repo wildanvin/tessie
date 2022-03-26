@@ -5,10 +5,14 @@ function sendGCode(ncFileName) {
     // this automated browsing experience)
 
     //with the executable path option works on the raspberry pi
-    /* let launchOptions = { executablePath: '/usr/bin/chromium-browser', 
-                headless: false, args: ['--start-maximized'] }; */
+    let launchOptions = {
+      executablePath: "/usr/bin/chromium-browser",
+      headless: true,
+      args: ["--start-maximized"],
+    }
 
-    let launchOptions = { headless: false, args: ["--start-maximized"] }
+    // with these options
+    //let launchOptions = { headless: true, args: ["--start-maximized"] }
 
     const browser = await puppeteer.launch(launchOptions)
 
@@ -36,7 +40,7 @@ function sendGCode(ncFileName) {
     //Select the file
     await fileChooser.accept([`./ncFiles/${ncFileName}.nc`])
 
-    await page.waitFor(1000) //1000 seconds are necessary or it doesnt work v:
+    await page.waitFor(3000) //3 seconds are necessary or it doesnt work v:
     await page.click(".btn-secondary")
     await browser.close()
   })()
