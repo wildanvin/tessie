@@ -1,63 +1,63 @@
 {
   "tag1": {
-    "startX": -156.7,
-    "startY": 57.2,
+    "startX": -153.7,
+    "startY": 54.2,
     "startZ": -6.58,
     "width": 31,
     "realWidth": 31,
     "height": 17
   },
   "tag2": {
-    "startX": -101.5,
-    "startY": 55.2,
+    "startX": -98.5,
+    "startY": 52.2,
     "startZ": -6.84,
     "width": 10,
     "realWidth": 20,
     "height": 19
   },
   "tag3": {
-    "startX": -67.3,
-    "startY": 55.9,
+    "startX": -64.3,
+    "startY": 52.9,
     "startZ": -6.85,
     "width": 10,
     "realWidth": 20,
     "height": 19
   },
   "tag4": {
-    "startX": -38.3,
-    "startY": 57,
+    "startX": -35.3,
+    "startY": 54,
     "startZ": -7.15,
     "width": 30,
     "realWidth": 30,
     "height": 13
   },
   "tag5": {
-    "startX": -150.2,
-    "startY": 7.2,
+    "startX": -147.2,
+    "startY": 4.2,
     "startZ": -6.53,
     "width": 20,
     "realWidth": 30,
     "height": 25
   },
   "tag6": {
-    "startX": -104.5,
-    "startY": 12.8,
+    "startX": -101.5,
+    "startY": 9.8,
     "startZ": -6.71,
     "width": 15,
     "realWidth": 25,
     "height": 16
   },
   "tag7": {
-    "startX": -68.7,
-    "startY": 11.8,
+    "startX": -65.7,
+    "startY": 8.8,
     "startZ": -6.76,
     "width": 11,
     "realWidth": 21,
     "height": 13
   },
   "tag8": {
-    "startX": -32.3,
-    "startY": 6.9,
+    "startX": -29.3,
+    "startY": 3.9,
     "startZ": -6.62,
     "width": 15,
     "realWidth": 25,
