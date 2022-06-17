@@ -2,7 +2,7 @@ function line1(heightSlot, input1, _templateName1) {
   const template = require(`../templates/${_templateName1}`)
   const letterHeight = template[input1[0]].height
 
-  return  (heightSlot - letterHeight) / 2
+  return (heightSlot - letterHeight) / 2
 }
 
 function line2(heightSlot, input1, input2, _templateName1, _templateName2) {
@@ -12,7 +12,7 @@ function line2(heightSlot, input1, input2, _templateName1, _templateName2) {
   const letterHeight2 = template2[input2[0]].height
 
   let b = (heightSlot - letterHeight1 - letterHeight2) / 3
-  let a = 1.5 * b + letterHeight2
+  let a = b + letterHeight2
 
   return [a, b]
 }
