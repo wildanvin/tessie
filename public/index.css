@@ -89,9 +89,9 @@ body {
   height: 70%;
   display: grid;
   grid-template-areas:
-    "options close"
-    "enterText enterText"
-    "grabar grabar";
+    'options close'
+    'enterText enterText'
+    'grabar grabar';
 }
 
 /* The Close Button */
@@ -122,6 +122,7 @@ body {
   font-size: 20px;
   /* font-weight: bold; */
   font-family: Arial, Helvetica, sans-serif;
+  z-index: 4;
 }
 
 select {
@@ -147,63 +148,63 @@ select {
   background-size: cover;
 
   position: relative;
-  bottom: 18vh;
+  bottom: 8vh;
 }
 
 #enterText1 {
   width: 400px;
   height: 400px;
-  background-image: url("./icons/bone.svg");
-  position: relative;
-  bottom: 15vh;
+  background-image: url('./icons/bone.svg');
+  /* position: relative;
+  bottom: 15vh; */
 }
 
 #enterText2 {
   width: 450px;
   height: 450px;
-  background-image: url("./icons/paw.svg");
+  background-image: url('./icons/paw.svg');
 }
 
 #enterText3 {
   width: 450px;
   height: 450px;
-  background-image: url("./icons/circularWithRing.svg");
-  position: relative;
-  bottom: 21vh;
+  background-image: url('./icons/circularWithRing.svg');
+  /* position: relative;
+  bottom: 21vh; */
 }
 
 #enterText4 {
   width: 450px;
   height: 450px;
-  background-image: url("./icons/fish.svg");
+  background-image: url('./icons/fish.svg');
 }
 
 #enterText5 {
   width: 350px;
   height: 350px;
-  background-image: url("./icons/house.svg");
-  position: relative;
-  bottom: 15vh;
+  background-image: url('./icons/house.svg');
+  /* position: relative;
+  bottom: 15vh; */
 }
 
 #enterText6 {
   width: 400px;
   height: 400px;
-  background-image: url("./icons/circular.svg");
+  background-image: url('./icons/circular.svg');
 }
 
 #enterText7 {
   width: 500px;
   height: 500px;
-  background-image: url("./icons/cat.svg");
-  position: relative;
-  bottom: 21vh;
+  background-image: url('./icons/cat.svg');
+  /* position: relative;
+  bottom: 21vh; */
 }
 
 #enterText8 {
   width: 400px;
   height: 400px;
-  background-image: url("./icons/star.svg");
+  background-image: url('./icons/star.svg');
 }
 
 .formGrab {
@@ -223,7 +224,7 @@ select {
   align-items: center;
 }
 
-input[type="text"] {
+input[type='text'] {
   width: 150px;
   height: 50%;
   padding: 5px;
@@ -236,7 +237,7 @@ input[type="text"] {
   text-align: center;
   /* box-sizing: border-box; */
 }
-input[type="submit"] {
+input[type='submit'] {
   width: 200px;
   padding: 1vh;
   margin: auto;
@@ -250,13 +251,13 @@ input[type="submit"] {
   text-align: center;
   box-sizing: border-box;
 }
-input[type="submit"]:disabled {
+input[type='submit']:disabled {
   background-color: #ddd;
   outline: none;
 }
 
-input[type="text"]:focus,
-input[type="submit"]:focus {
+input[type='text']:focus,
+input[type='submit']:focus {
   background-color: #ddd;
   outline: none;
 }
@@ -289,4 +290,125 @@ input[type="submit"]:focus {
 #line2M3 {
   position: relative;
   top: 1vh;
+}
+
+/* Extra small devices (phones, 1024px and down) */
+@media only screen and (max-width: 1024px) {
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #ccdad1;
+    margin: auto;
+
+    border-radius: 15px;
+    border: 7px solid #f87666;
+    width: 75%; /* Could be more or less, depending on screen size */
+    height: 95%;
+    display: grid;
+    grid-template-areas:
+      'options close'
+      'enterText enterText'
+      'grabar grabar';
+  }
+
+  .enterText {
+    grid-area: enterText;
+    /*CSS grid:*/
+    justify-self: center;
+    justify-content: center;
+
+    /*Flexbox*/
+    display: flex;
+    flex-direction: column;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    position: relative;
+    bottom: 21vh;
+  }
+
+  input[type='text'] {
+    width: 110px;
+    height: 45%;
+    padding: 5px;
+
+    margin: auto;
+    border: none;
+    background: #ddd;
+
+    font-size: 15px;
+    text-align: center;
+    /* box-sizing: border-box; */
+  }
+  input[type='submit'] {
+    width: 200px;
+    padding: 1vh;
+    margin: auto;
+    border: none;
+    background: #ffb800;
+
+    justify-content: center;
+    align-items: center;
+
+    font-size: 25px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  #enterText1 {
+    width: 250px;
+    height: 250px;
+    background-image: url('./icons/bone.svg');
+    /* position: relative;
+    bottom: 15vh; */
+  }
+
+  #enterText2 {
+    width: 250px;
+    height: 250px;
+    background-image: url('./icons/paw.svg');
+  }
+
+  #enterText3 {
+    width: 250px;
+    height: 250px;
+    background-image: url('./icons/circularWithRing.svg');
+    /* position: relative;
+    bottom: 21vh; */
+  }
+
+  #enterText4 {
+    width: 250px;
+    height: 250px;
+    background-image: url('./icons/fish.svg');
+  }
+
+  #enterText5 {
+    width: 250px;
+    height: 250px;
+    background-image: url('./icons/house.svg');
+    /* position: relative;
+    bottom: 15vh; */
+  }
+
+  #enterText6 {
+    width: 250px;
+    height: 250px;
+    background-image: url('./icons/circular.svg');
+  }
+
+  #enterText7 {
+    width: 300px;
+    height: 300px;
+    background-image: url('./icons/cat.svg');
+    /* position: relative;
+    bottom: 21vh; */
+  }
+
+  #enterText8 {
+    width: 250px;
+    height: 250px;
+    background-image: url('./icons/star.svg');
+  }
 }
