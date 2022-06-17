@@ -14,7 +14,7 @@ function line2(heightSlot, input1, input2, _templateName1, _templateName2) {
   let b = (heightSlot - letterHeight1 - letterHeight2) / 3
   let a = b + letterHeight2
 
-  return [a, b]
+  return [a, b * 0.4]
 }
 
 exports.line1 = line1
