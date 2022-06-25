@@ -1,12 +1,12 @@
-const express = require("express")
-const path = require("path")
-const { v1: uuidv1 } = require("uuid")
+const express = require('express')
+const path = require('path')
+const { v1: uuidv1 } = require('uuid')
 
-const gCodeGen = require("./scripts/gCodeGen")
-const sendGCode = require("./scripts/sendGCode")
-const sendGCodeV2 = require("./scripts/sendGCodeV2")
+const gCodeGen = require('./scripts/gCodeGen')
+const sendGCode = require('./scripts/sendGCode')
+const sendGCodeV2 = require('./scripts/sendGCodeV2')
 
-const doesTextFits = require("./scripts/doesTextFits")
+const doesTextFits = require('./scripts/doesTextFits')
 
 const app = express()
 
@@ -17,36 +17,36 @@ const app = express()
 app.use(express.json())
 
 // Set static folder
-app.use(express.static(path.join(__dirname, "public")))
+app.use(express.static(path.join(__dirname, 'public')))
 
-app.post("/test", (req, res) => {
+app.post('/test', (req, res) => {
   const line1 = req.body
 
   console.log(line1)
-  let a = { text: "hello " }
-  console.log("hello from test 22")
+  let a = { text: 'hello ' }
+  console.log('hello from test 22')
   res.send(a)
 })
 
-app.post("/engraveSlot1", (req, res) => {
+app.post('/engraveSlot1', (req, res) => {
   const line1 = req.body.line1
   const line2 = req.body.line2
   const numberOfLines = req.body.lineList
   console.log(line1, line2, numberOfLines)
 
-  if (numberOfLines == "1lines") {
-    let a = doesTextFits.line1(line1, "tag1")
+  if (numberOfLines == '1lines') {
+    let a = doesTextFits.line1(line1, 'tag1')
 
     if (a) {
       global.ncFileName = uuidv1()
-      gCodeGen.generate(line1, line2, ncFileName, numberOfLines, a, NaN, "tag1")
+      gCodeGen.generate(line1, line2, ncFileName, numberOfLines, a, NaN, 'tag1')
     } else {
       return res.sendStatus(400)
     }
   }
 
-  if (numberOfLines == "2lines") {
-    let a = doesTextFits.line2(line1, line2, "tag1")
+  if (numberOfLines == '2lines') {
+    let a = doesTextFits.line2(line1, line2, 'tag1')
 
     if (a) {
       global.ncFileName = uuidv1()
@@ -57,7 +57,7 @@ app.post("/engraveSlot1", (req, res) => {
         numberOfLines,
         a[0],
         a[1],
-        "tag1"
+        'tag1'
       )
     } else {
       return res.sendStatus(400)
@@ -68,25 +68,25 @@ app.post("/engraveSlot1", (req, res) => {
   res.end()
 })
 
-app.post("/engraveSlot2", (req, res) => {
+app.post('/engraveSlot2', (req, res) => {
   const line1 = req.body.line1
   const line2 = req.body.line2
   const numberOfLines = req.body.lineList
   console.log(line1, line2, numberOfLines)
 
-  if (numberOfLines == "1lines") {
-    let a = doesTextFits.line1(line1, "tag2")
+  if (numberOfLines == '1lines') {
+    let a = doesTextFits.line1(line1, 'tag2')
 
     if (a) {
       global.ncFileName = uuidv1()
-      gCodeGen.generate(line1, line2, ncFileName, numberOfLines, a, NaN, "tag2")
+      gCodeGen.generate(line1, line2, ncFileName, numberOfLines, a, NaN, 'tag2')
     } else {
       return res.sendStatus(400)
     }
   }
 
-  if (numberOfLines == "2lines") {
-    let a = doesTextFits.line2(line1, line2, "tag2")
+  if (numberOfLines == '2lines') {
+    let a = doesTextFits.line2(line1, line2, 'tag2')
 
     if (a) {
       global.ncFileName = uuidv1()
@@ -97,7 +97,7 @@ app.post("/engraveSlot2", (req, res) => {
         numberOfLines,
         a[0],
         a[1],
-        "tag2"
+        'tag2'
       )
     } else {
       return res.sendStatus(400)
@@ -108,25 +108,25 @@ app.post("/engraveSlot2", (req, res) => {
   res.end()
 })
 
-app.post("/engraveSlot3", (req, res) => {
+app.post('/engraveSlot3', (req, res) => {
   const line1 = req.body.line1
   const line2 = req.body.line2
   const numberOfLines = req.body.lineList
   console.log(line1, line2, numberOfLines)
 
-  if (numberOfLines == "1lines") {
-    let a = doesTextFits.line1(line1, "tag3")
+  if (numberOfLines == '1lines') {
+    let a = doesTextFits.line1(line1, 'tag3')
 
     if (a) {
       global.ncFileName = uuidv1()
-      gCodeGen.generate(line1, line2, ncFileName, numberOfLines, a, NaN, "tag3")
+      gCodeGen.generate(line1, line2, ncFileName, numberOfLines, a, NaN, 'tag3')
     } else {
       return res.sendStatus(400)
     }
   }
 
-  if (numberOfLines == "2lines") {
-    let a = doesTextFits.line2(line1, line2, "tag3")
+  if (numberOfLines == '2lines') {
+    let a = doesTextFits.line2(line1, line2, 'tag3')
 
     if (a) {
       global.ncFileName = uuidv1()
@@ -137,7 +137,7 @@ app.post("/engraveSlot3", (req, res) => {
         numberOfLines,
         a[0],
         a[1],
-        "tag3"
+        'tag3'
       )
     } else {
       return res.sendStatus(400)
@@ -148,25 +148,25 @@ app.post("/engraveSlot3", (req, res) => {
   res.end()
 })
 
-app.post("/engraveSlot4", (req, res) => {
+app.post('/engraveSlot4', (req, res) => {
   const line1 = req.body.line1
   const line2 = req.body.line2
   const numberOfLines = req.body.lineList
   console.log(line1, line2, numberOfLines)
 
-  if (numberOfLines == "1lines") {
-    let a = doesTextFits.line1(line1, "tag4")
+  if (numberOfLines == '1lines') {
+    let a = doesTextFits.line1(line1, 'tag4')
 
     if (a) {
       global.ncFileName = uuidv1()
-      gCodeGen.generate(line1, line2, ncFileName, numberOfLines, a, NaN, "tag4")
+      gCodeGen.generate(line1, line2, ncFileName, numberOfLines, a, NaN, 'tag4')
     } else {
       return res.sendStatus(400)
     }
   }
 
-  if (numberOfLines == "2lines") {
-    let a = doesTextFits.line2(line1, line2, "tag4")
+  if (numberOfLines == '2lines') {
+    let a = doesTextFits.line2(line1, line2, 'tag4')
 
     if (a) {
       global.ncFileName = uuidv1()
@@ -177,7 +177,7 @@ app.post("/engraveSlot4", (req, res) => {
         numberOfLines,
         a[0],
         a[1],
-        "tag4"
+        'tag4'
       )
     } else {
       return res.sendStatus(400)
@@ -188,25 +188,25 @@ app.post("/engraveSlot4", (req, res) => {
   res.end()
 })
 
-app.post("/engraveSlot5", (req, res) => {
+app.post('/engraveSlot5', (req, res) => {
   const line1 = req.body.line1
   const line2 = req.body.line2
   const numberOfLines = req.body.lineList
   console.log(line1, line2, numberOfLines)
 
-  if (numberOfLines == "1lines") {
-    let a = doesTextFits.line1(line1, "tag5")
+  if (numberOfLines == '1lines') {
+    let a = doesTextFits.line1(line1, 'tag5')
 
     if (a) {
       global.ncFileName = uuidv1()
-      gCodeGen.generate(line1, line2, ncFileName, numberOfLines, a, NaN, "tag5")
+      gCodeGen.generate(line1, line2, ncFileName, numberOfLines, a, NaN, 'tag5')
     } else {
       return res.sendStatus(400)
     }
   }
 
-  if (numberOfLines == "2lines") {
-    let a = doesTextFits.line2(line1, line2, "tag5")
+  if (numberOfLines == '2lines') {
+    let a = doesTextFits.line2(line1, line2, 'tag5')
 
     if (a) {
       global.ncFileName = uuidv1()
@@ -217,7 +217,7 @@ app.post("/engraveSlot5", (req, res) => {
         numberOfLines,
         a[0],
         a[1],
-        "tag5"
+        'tag5'
       )
     } else {
       return res.sendStatus(400)
@@ -228,25 +228,25 @@ app.post("/engraveSlot5", (req, res) => {
   res.end()
 })
 
-app.post("/engraveSlot6", (req, res) => {
+app.post('/engraveSlot6', (req, res) => {
   const line1 = req.body.line1
   const line2 = req.body.line2
   const numberOfLines = req.body.lineList
   console.log(line1, line2, numberOfLines)
 
-  if (numberOfLines == "1lines") {
-    let a = doesTextFits.line1(line1, "tag6")
+  if (numberOfLines == '1lines') {
+    let a = doesTextFits.line1(line1, 'tag6')
 
     if (a) {
       global.ncFileName = uuidv1()
-      gCodeGen.generate(line1, line2, ncFileName, numberOfLines, a, NaN, "tag6")
+      gCodeGen.generate(line1, line2, ncFileName, numberOfLines, a, NaN, 'tag6')
     } else {
       return res.sendStatus(400)
     }
   }
 
-  if (numberOfLines == "2lines") {
-    let a = doesTextFits.line2(line1, line2, "tag6")
+  if (numberOfLines == '2lines') {
+    let a = doesTextFits.line2(line1, line2, 'tag6')
 
     if (a) {
       global.ncFileName = uuidv1()
@@ -257,7 +257,7 @@ app.post("/engraveSlot6", (req, res) => {
         numberOfLines,
         a[0],
         a[1],
-        "tag6"
+        'tag6'
       )
     } else {
       return res.sendStatus(400)
@@ -268,25 +268,25 @@ app.post("/engraveSlot6", (req, res) => {
   res.end()
 })
 
-app.post("/engraveSlot7", (req, res) => {
+app.post('/engraveSlot7', (req, res) => {
   const line1 = req.body.line1
   const line2 = req.body.line2
   const numberOfLines = req.body.lineList
   console.log(line1, line2, numberOfLines)
 
-  if (numberOfLines == "1lines") {
-    let a = doesTextFits.line1(line1, "tag7")
+  if (numberOfLines == '1lines') {
+    let a = doesTextFits.line1(line1, 'tag7')
 
     if (a) {
       global.ncFileName = uuidv1()
-      gCodeGen.generate(line1, line2, ncFileName, numberOfLines, a, NaN, "tag7")
+      gCodeGen.generate(line1, line2, ncFileName, numberOfLines, a, NaN, 'tag7')
     } else {
       return res.sendStatus(400)
     }
   }
 
-  if (numberOfLines == "2lines") {
-    let a = doesTextFits.line2(line1, line2, "tag7")
+  if (numberOfLines == '2lines') {
+    let a = doesTextFits.line2(line1, line2, 'tag7')
 
     if (a) {
       global.ncFileName = uuidv1()
@@ -297,7 +297,7 @@ app.post("/engraveSlot7", (req, res) => {
         numberOfLines,
         a[0],
         a[1],
-        "tag7"
+        'tag7'
       )
     } else {
       return res.sendStatus(400)
@@ -308,25 +308,25 @@ app.post("/engraveSlot7", (req, res) => {
   res.end()
 })
 
-app.post("/engraveSlot8", (req, res) => {
+app.post('/engraveSlot8', (req, res) => {
   const line1 = req.body.line1
   const line2 = req.body.line2
   const numberOfLines = req.body.lineList
   console.log(line1, line2, numberOfLines)
 
-  if (numberOfLines == "1lines") {
-    let a = doesTextFits.line1(line1, "tag8")
+  if (numberOfLines == '1lines') {
+    let a = doesTextFits.line1(line1, 'tag8')
 
     if (a) {
       global.ncFileName = uuidv1()
-      gCodeGen.generate(line1, line2, ncFileName, numberOfLines, a, NaN, "tag8")
+      gCodeGen.generate(line1, line2, ncFileName, numberOfLines, a, NaN, 'tag8')
     } else {
       return res.sendStatus(400)
     }
   }
 
-  if (numberOfLines == "2lines") {
-    let a = doesTextFits.line2(line1, line2, "tag8")
+  if (numberOfLines == '2lines') {
+    let a = doesTextFits.line2(line1, line2, 'tag8')
 
     if (a) {
       global.ncFileName = uuidv1()
@@ -337,7 +337,7 @@ app.post("/engraveSlot8", (req, res) => {
         numberOfLines,
         a[0],
         a[1],
-        "tag8"
+        'tag8'
       )
     } else {
       return res.sendStatus(400)
@@ -348,13 +348,8 @@ app.post("/engraveSlot8", (req, res) => {
   res.end()
 })
 
-app.post("/sendGCode", (req, res) => {
+app.post('/sendGCode', (req, res) => {
   sendGCode.sendGCode(ncFileName)
-  res.end()
-})
-
-app.post("/sendGCodeV2", (req, res) => {
-  sendGCodeV2.sendGCodeV2(ncFileName)
   res.end()
 })
 
