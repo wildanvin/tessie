@@ -4,7 +4,6 @@ const { v1: uuidv1 } = require('uuid')
 
 const gCodeGen = require('./scripts/gCodeGen')
 const sendGCode = require('./scripts/sendGCode')
-const sendGCodeV2 = require('./scripts/sendGCodeV2')
 
 const doesTextFits = require('./scripts/doesTextFits')
 
