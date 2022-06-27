@@ -17,7 +17,7 @@ You can preview the gcode (or nc) files with this tool: [NCviewer](https://ncvie
 
 ## Instructions
 
-I am working on that 😬
+I made an [Instructable](https://www.instructables.com/Automatic-Pet-Tag-Engraver/) on how to set up an Automatic Pet Tag Engraver
 
 ## Directory structure
 
