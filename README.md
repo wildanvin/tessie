@@ -15,6 +15,10 @@ The templates used can be found at:
 
 You can preview the gcode (or nc) files with this tool: [NCviewer](https://ncviewer.com/)
 
+## How the gcode is sended
+
+I use puppetter.js to manipulate the web interface provided by UGS and send the file generated. I know this is not the most elegant solution but it works. I made this project while learning HTML, CSS and JS, in the future I will try to improve the code and use React to eliminate redundancy (especially in the front end).
+
 ## Instructions
 
 I made an [Instructable](https://www.instructables.com/Automatic-Pet-Tag-Engraver/) on how to set up an Automatic Pet Tag Engraver
